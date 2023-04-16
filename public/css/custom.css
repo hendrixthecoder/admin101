@@ -1,0 +1,17 @@
+/* Your Custom CSS Goes here */
+
+vertical-center {
+    margin-top: 3%;
+}
+
+.space {
+    margin: 15%;
+}
+
+.enclosing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
