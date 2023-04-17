@@ -25,8 +25,9 @@ return [
     'insufficientFunds' => 'Vos fonds sont insuffisants pour cette transaction.',
     'profileUpdSuc' => 'Mise à jour du profil réussie!',
     'passChangeSuc' => 'Le mot de passe a été changé avec succès!',
-    'errPass' => 'Le mot de passe ne correspond pas à nos enregistrements !',
-    'depSuc' => 'Le dépôt a réussi, soyez patient pendant que le système confirme votre transaction !'
-    
+    'errPass' => 'Le mot de passe ne correspond pas à nos enregistrements!',
+    'depSuc' => 'Le dépôt a réussi, soyez patient pendant que le système confirme votre transaction !',
+    'kycUplSuc' => 'Les fichiers ont été téléchargés avec succès, attendez que le système approuve.',
+    'planError' => "Le montant que vous versez n'est pas suffisant pour rejoindre le plan ou supérieur au dépôt maximum pour rejoindre le plan ou vous avez des fonds insuffisants.",
 
 ];

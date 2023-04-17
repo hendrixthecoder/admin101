@@ -27,7 +27,7 @@ return [
     'passChangeSuc' => 'Das Passwort wurde erfolgreich geändert!',
     'errPass' => 'Das Passwort stimmt nicht mit unseren Aufzeichnungen überein!',
     'depSuc' => 'Die Einzahlung war erfolgreich, seien Sie geduldig, während das System Ihre Transaktion bestätigt!',
-    'kycUplSuc' => 'Files uploaded successfully, wait for the system to approve.',
-    'planError' => 'The amount you put in is either not sufficient join the plan or greater than the maximum deposit to join the plan or you have insufficient funds.',
+    'kycUplSuc' => 'Dateien erfolgreich hochgeladen, warten Sie, bis das System sie genehmigt hat.',
+    'planError' => 'Der von Ihnen eingezahlte Betrag ist entweder nicht ausreichend, um dem Plan beizutreten, oder höher als die maximale Einzahlung, um dem Plan beizutreten, oder Sie verfügen nicht über ausreichende Mittel.',
 
 ];

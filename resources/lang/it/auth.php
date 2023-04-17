@@ -26,7 +26,8 @@ return [
     'profileUpdSuc' => 'Profilo aggiornato con successo!',
     'passChangeSuc' => 'Password cambiata con successo!',
     'errPass' => 'La password non corrisponde ai nostri record!',
-    'depSuc' => 'Il deposito è andato a buon fine, sii paziente mentre il sistema conferma la tua transazione!'
-    
+    'depSuc' => 'Il deposito è andato a buon fine, sii paziente mentre il sistema conferma la tua transazione!',
+    'kycUplSuc' => 'File caricati correttamente, attendi che il sistema approvi.',
+    'planError' => "L'importo che hai versato non è sufficiente per aderire al piano o è superiore al deposito massimo per aderire al piano oppure non hai fondi sufficienti.",
 
 ];

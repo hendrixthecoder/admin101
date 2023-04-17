@@ -28,7 +28,6 @@ return [
     'errPass' => 'Password does not match our records!',
     'depSuc' => 'Deposit was successful, be patient while the system confirms your transaction!',
     'kycUplSuc' => 'Files uploaded successfully, wait for the system to approve.',
-    'planError' => 'The amount you put in is either not sufficient join the plan or greater than the maximum deposit to join the plan or you have insufficient funds.',
-    ''
+    'planError' => 'The amount you put in is either not sufficient join the plan or greater than the maximum deposit to join the plan or you have insufficient funds.'
 
 ];

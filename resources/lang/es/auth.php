@@ -26,5 +26,7 @@ return [
     'profileUpdSuc' => '¡Perfil actualizado con éxito!',
     'passChangeSuc' => '¡Contraseña cambiada con éxito!',
     'errPass' => '¡La contraseña no coincide con nuestros registros!',
-    'depSuc' => 'El depósito fue exitoso, ¡tenga paciencia mientras el sistema confirma su transacción!'
+    'depSuc' => 'El depósito fue exitoso, ¡tenga paciencia mientras el sistema confirma su transacción!',
+    'kycUplSuc' => 'Los archivos se cargaron correctamente, espere a que el sistema los apruebe.',
+    'planError' => 'El monto que ingresó no es suficiente para unirse al plan o es mayor que el depósito máximo para unirse al plan o no tiene fondos suficientes.',
 ];
