@@ -44,9 +44,9 @@ use Illuminate\Support\Facades\Mail;
 */
 
 
-Route::get('/', function (){
-    return redirect()->route('home');
-});
+// Route::get('/', function (){
+//     return redirect()->route('home');
+// });
 
 Route::get('locale/{lang}', [LocalizationController::class, 'setLang'])->name('setLocale');
 
