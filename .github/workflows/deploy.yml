@@ -17,3 +17,4 @@ jobs:
         server: ${{ secrets.SERVER_IP }}
         username: ${{ secrets.FTP_USERNAM }}
         password: ${{ secrets.MAIN_FTP_PASSWORD }}
+        
