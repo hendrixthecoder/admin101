@@ -52,7 +52,7 @@ use Illuminate\Support\Facades\Mail;
 
 Route::get('locale/{lang}', [LocalizationController::class, 'setLang'])->name('setLocale');
 
-Route::get('/', function (){
+Route::get('/account', function (){
     return redirect()->route('home');
 });
 
