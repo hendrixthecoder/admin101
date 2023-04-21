@@ -63,7 +63,7 @@ class DepositsController extends Controller
 
         $newDeposit->transaction_id = generateTransactionId();
 
-        $upload_dir = "/cloud/uploads/proof";
+        $upload_dir = "../../../cloud/uploads/proof";
 
         $img = Storage::putFile($upload_dir, $request->file('proof'));
 
