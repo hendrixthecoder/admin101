@@ -209,6 +209,11 @@ class AdminMethodController extends Controller
     public function approveKyc (Request $request) {
         $user = User::findOrFail($request->user_id);
 
+        unlink('../cloud/uploads/kyc/'.$user->id_path);
+        unlink('../cloud/uploads/kyc/'.$user->photo_path);
+
+        die;
+
         Storage::disk('public')->delete([$user->id_path, $user->photo_path]);
 
         $user->id_path = '';
