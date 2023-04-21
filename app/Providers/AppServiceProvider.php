@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Debugbar::disable();
+        // Debugbar::disable();
         Paginator::useBootstrap();
     }
 }

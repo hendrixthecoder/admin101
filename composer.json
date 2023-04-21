@@ -13,7 +13,8 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravel/ui": "3.3.0",
-        "santigarcor/laratrust": "^7.1"
+        "santigarcor/laratrust": "^7.1",
+        "sarfraznawaz2005/loading": "^1.4"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
