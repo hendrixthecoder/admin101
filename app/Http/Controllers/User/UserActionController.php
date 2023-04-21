@@ -167,11 +167,11 @@ class UserActionController extends Controller
 
         $upload_dir = "../cloud/uploads/kyc";
 
-        $idcard_path = Carbon::now()->timestamp.'.'.$request->file('proof')->getClientOriginalExtension();
+        $idcard_path = Carbon::now()->timestamp.'.'.$validated['idcard']->getClientOriginalExtension();
         $validated['idcard']->move($upload_dir, $idcard_path);
 
-        $photo_path = Carbon::now()->addSeconds(3)->timestamp.'.'.$request->file('proof')->getClientOriginalExtension();;
-        $validated['idcard']->move($upload_dir, $idcard_path);
+        $photo_path = Carbon::now()->addSeconds(3)->timestamp.'.'.$validated['photo']->getClientOriginalExtension();;
+        $validated['photo']->move($upload_dir, $idcard_path);
 
         $user = $request->user();
         $user->id_path = $idcard_path;
