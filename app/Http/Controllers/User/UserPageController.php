@@ -32,13 +32,12 @@ class UserPageController extends Controller
             $user = $request->user();
 
             $plansCount = $user->investmentPlans()->count();
-            $deposits = $user->deposits()->sum('amount');
+            $deposits = number_format($user->deposits()->sum('amount'), 0,".",",");
             $depositsCount = $user->deposits()->count();
-            $referralBonus = $user->getBonusCredits() - $user->getReversedBonus();
-            $profit = $user->getDueProfit() - $user->getReversedProfit();
-            $balance = $user->getBalance(); 
+            $referralBonus = number_format($user->getBonusCredits() - $user->getReversedBonus(), 0, ".",",");
+            $profit = number_format($user->getDueProfit() - $user->getReversedProfit(), 0, ".",",");
+            $balance = number_format($user->getBalance(), 0, '.',','); 
             
-            // aloha
 
             return view('user.index', compact(['profit','user', 'deposits', 'balance', 'title', 'plansCount', 'depositsCount', 'referralBonus']));
         }
