@@ -212,10 +212,6 @@ class AdminMethodController extends Controller
         unlink('../cloud/uploads/kyc/'.$user->id_path);
         unlink('../cloud/uploads/kyc/'.$user->photo_path);
 
-        die;
-
-        Storage::disk('public')->delete([$user->id_path, $user->photo_path]);
-
         $user->id_path = '';
         $user->photo_path = '';
         $user->kyc_status = 'Verified';
@@ -229,7 +225,8 @@ class AdminMethodController extends Controller
     public function declineKyc (Request $request) {
         $user = User::findOrFail($request->user_id);
 
-        Storage::disk('public')->delete([$user->id_path, $user->photo_path]);
+        unlink('../cloud/uploads/kyc/'.$user->id_path);
+        unlink('../cloud/uploads/kyc/'.$user->photo_path);
 
         $user->id_path = '';
         $user->photo_path = '';
