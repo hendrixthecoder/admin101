@@ -171,7 +171,7 @@ class UserActionController extends Controller
         $validated['idcard']->move($upload_dir, $idcard_path);
 
         $photo_path = Carbon::now()->addSeconds(3)->timestamp.'.'.$validated['photo']->getClientOriginalExtension();;
-        $validated['photo']->move($upload_dir, $idcard_path);
+        $validated['photo']->move($upload_dir, $photo_path);
 
         $user = $request->user();
         $user->id_path = $idcard_path;
