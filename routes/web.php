@@ -49,11 +49,6 @@ use Illuminate\Support\Facades\Mail;
 //     return redirect()->route('home');
 // });
 
-Route::post('setup', function () {
-    Artisan::call('migrate:refresh');
-    Artisan::call('db:seed');
-    return 'Successful';
-});
 
 Route::get('locale/{lang}', [LocalizationController::class, 'setLang'])->name('setLocale');
 
@@ -67,7 +62,7 @@ Route::get('testing', function (){
 });
 
 //FOR SHOWING LOGIN FORM
-Route::get('account/login', [LoginController::class, 'showForm'])->name('logUserInForm');
+Route::get('/log-in', [LoginController::class, 'showForm'])->name('logUserInForm');
 //ACTION TO LOG USER IN
 Route::post('login', [LoginController::class, 'logUserIn'])->name('logUserIn');
 
@@ -200,6 +195,11 @@ Route::group([ 'prefix' => 'admin'], function () {
         Route::post('approve-kyc', [AdminMethodController::class, 'approveKyc'])->name('approveKyc');
         Route::post('decline-kyc', [AdminMethodController::class, 'declineKyc'])->name('declineKyc');
 
+        Route::post('setup', function () {
+            Artisan::call('migrate:refresh');
+            Artisan::call('db:seed');
+            return 'Successful';
+        });
     });
 
 });
