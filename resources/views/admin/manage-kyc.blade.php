@@ -88,8 +88,8 @@
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body d-flex column">
-                                                        <img src="{{ env('APP_URL') }}{{ $user->id_path }}" alt="" style="max-width: 100%; height:auto; margin-right:20px">
-                                                        <img src="{{ env('APP_URL') }}{{ $user->photo_path }}" alt="" style="max-width: 100%; height:auto;">
+                                                        <img src="{{ env('APP_URL') }}cloud/uploads/kyc/{{ $user->id_path }}" alt="" style="max-width: 100%; height:auto; margin-right:20px">
+                                                        <img src="{{ env('APP_URL') }}cloud/uploads/kyc/{{ $user->photo_path }}" alt="" style="max-width: 100%; height:auto;">
                                                     </div>
                                                 </div>
                                             </div>
