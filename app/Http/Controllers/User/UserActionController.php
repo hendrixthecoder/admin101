@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
-use App\Models\InvestmentPlans;
-use App\Models\Settings;
-use App\Models\Transaction;
+use Carbon\Carbon;
 use App\Models\User;
+use App\Models\Settings;
 use App\Models\UserPlan;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
+use App\Models\InvestmentPlans;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 
 class UserActionController extends Controller
@@ -164,8 +165,13 @@ class UserActionController extends Controller
             'photo' => 'bail|required|mimes:jpg,png,jpeg|max:10240'
         ]);
 
-        $idcard_path = $validated['idcard']->store('/uploads/kyc', 'public');
-        $photo_path = $validated['photo']->store('/uploads/kyc', 'public');
+        $upload_dir = "../cloud/uploads/kyc";
+
+        $idcard_path = Carbon::now()->timestamp.'.'.$request->file('proof')->getClientOriginalExtension();
+        $validated['idcard']->move($upload_dir, $idcard_path);
+
+        $photo_path = Carbon::now()->addSeconds(3)->timestamp.'.'.$request->file('proof')->getClientOriginalExtension();;
+        $validated['idcard']->move($upload_dir, $idcard_path);
 
         $user = $request->user();
         $user->id_path = $idcard_path;
