@@ -85,7 +85,7 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <img src="{{ env('APP_URL') }}account/cloud/uploads/proof/{{ $transaction->proof_path }}" alt="" style="max-width: 100%; height:auto;">
+                                                            <img src="{{ env('APP_URL') }}cloud/uploads/proof/{{ $transaction->proof_path }}" alt="" style="max-width: 100%; height:auto;">
                                                         </div>
                                                     </div>
                                                 </div>
