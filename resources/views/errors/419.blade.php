@@ -16,7 +16,7 @@
                     <div class="col-md-8 offset-md-2 text-center">
                         <h1 style="font-size: 162px">419</h1>
                         <h2>Page Expired</h2>
-                        <p>Please click <a href="login">here</a> to go to the login page.</p>
+                        <p>Please click <a href="log-in">here</a> to go to the login page.</p>
                     </div>
                 </div>
             </div>

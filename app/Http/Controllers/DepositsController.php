@@ -7,6 +7,8 @@ use App\Models\Transaction;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreDeposits;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 use Image;
 
 class DepositsController extends Controller
@@ -61,9 +63,11 @@ class DepositsController extends Controller
 
         $newDeposit->transaction_id = generateTransactionId();
 
-        $img = $request->proof->store('/uploads/proof', 'public');
+        $upload_dir = "../cloud/uploads/proof";
 
-        $newDeposit->proof_path = env('APP_URL').'/'.$img;
+        $img = Storage::putFile($request->file('proof'), new File($upload_dir));
+
+        $newDeposit->proof_path = '/cloud/uploads/proof'.$img;
         $newDeposit->save();
 
         return redirect()->route('deposits')->with('message', trans('auth.depSuc'));

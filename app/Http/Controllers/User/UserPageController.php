@@ -42,7 +42,6 @@ class UserPageController extends Controller
             return view('user.index', compact(['profit','user', 'deposits', 'balance', 'title', 'plansCount', 'depositsCount', 'referralBonus']));
         }
 
-
     }
 
     public function investplans (Request $request) {
