@@ -49,7 +49,7 @@ class UserPageController extends Controller
         $title = env('APP_NAME');
         $user = $request->user();
         $plans = InvestmentPlans::all();
-        $balance = $user->getBalance();
+        $balance = number_format($user->getBalance(), 0, '.',',');
 
         return view('user.investplans', compact(['plans', 'title', 'user', 'balance']));
     }
@@ -73,7 +73,7 @@ class UserPageController extends Controller
         $deposits = $user->deposits()->paginate(2);
         
         //GET USER BALANCE
-        $balance = $user->getBalance();
+        $balance = number_format($user->getBalance(), 0, '.',',');
 
         return view('user.deposits', compact(['balance', 'deposits', 'title']));
     }
@@ -87,7 +87,7 @@ class UserPageController extends Controller
 
         //GET USER BALANCE
 
-        $balance = $user->getBalance();
+        $balance = number_format($user->getBalance(), 0, '.',',');
 
         return view('user.withdrawals', compact(['siteSettings','transactions', 'balance', 'title']));
     }
