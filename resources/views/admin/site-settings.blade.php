@@ -57,22 +57,22 @@
                                         <form action="{{ route('editSitePreferences') }}" method="post">
                                             @csrf
                                             <div class="row">
-                                                <label for="minimum_withdrawal" class="form-label">Minimum Withdrawal:</label>
+                                                <label for="minimum_withdrawal" class="form-label">Minimum Withdrawal($):</label>
                                                 <input name="minimum_withdrawal" value="{{ $siteSettings->minimum_withdrawal }}" type="number" class="form-control" id="minimum_withdrawal" aria-describedby="emailHelp">
                                                 <div id="" class="form-text"></div>
                                             </div>
                                             <div class="row mt-2">
-                                                <label for="referral_bonus_1" class="form-label">Referral Bonus (1st User):</label>
+                                                <label for="referral_bonus_1" class="form-label">Referral Bonus(%) (1st Level):</label>
                                                 <input name="referral_bonus_first" value="{{ $siteSettings->referral_bonus_first }}" type="number" class="form-control" id="referral_bonus_1" aria-describedby="">
                                                 <div id="" class="form-text"></div>
                                             </div>
                                             <div class="row mt-2">
-                                                <label for="referral_bonus_2" class="form-label">Referral Bonus (2nd User):</label>
+                                                <label for="referral_bonus_2" class="form-label">Referral Bonus(%) (2nd Level):</label>
                                                 <input name="referral_bonus_second" value="{{ $siteSettings->referral_bonus_second }}" type="number" class="form-control" id="referral_bonus_2" aria-describedby="">
                                                 <div id="" class="form-text"></div>
                                             </div>
                                             <div class="row mt-2">
-                                                <label for="referral_bonus_3" class="form-label">Referral Bonus (3rd User):</label>
+                                                <label for="referral_bonus_3" class="form-label">Referral Bonus(%) (3rd Level):</label>
                                                 <input name="referral_bonus_third" value="{{ $siteSettings->referral_bonus_third }}" type="number" class="form-control" id="referral_bonus_3" aria-describedby="">
                                                 <div id="" class="form-text"></div>
                                             </div>
