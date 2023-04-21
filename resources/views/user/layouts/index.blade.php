@@ -46,6 +46,7 @@
     
     @include('user.layouts.headsection')
     <div class="loader"></div>
+    <script src="{{ asset('js/custom.js') }}"></script>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="{{ asset('plugins/jquery/jquery-3.5.1.min.js') }}"></script>
@@ -55,7 +56,6 @@
     <script src="{{ asset('plugins/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('plugins/dropzone/min/dropzone.min.js') }}"></script>
     <script src="{{ asset('js/main.min.js') }}"></script>
-    <script src="{{ asset('js/custom.js') }}"></script>
     <script src="{{ asset('js/pages/dashboard.js') }}"></script>
     <script src="{{ asset('plugins/datatables/datatables.min.js') }}"></script>
     <script src="{{ asset('js/pages/datatables.js') }}"></script>
