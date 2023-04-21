@@ -7,6 +7,7 @@ use App\Models\Transaction;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreDeposits;
+use Carbon\Carbon;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 use Image;
@@ -63,11 +64,12 @@ class DepositsController extends Controller
 
         $newDeposit->transaction_id = generateTransactionId();
 
-        $upload_dir = "../../../cloud/uploads/proof";
+        $upload_dir = "../cloud/uploads/proof";
+        $filename = Carbon::now()->timestamp;
 
-        $img = Storage::putFile($upload_dir, $request->file('proof'));
+        $img = $request->file('proof')->move($upload_dir, $filename);
 
-        $newDeposit->proof_path = '/cloud/uploads/proof'.$img;
+        $newDeposit->proof_path = $filename;
         $newDeposit->save();
 
         return redirect()->route('deposits')->with('message', trans('auth.depSuc'));
