@@ -43,7 +43,7 @@
                               <tbody>
                                 <tr>
                                   <td style="line-height: 24px; font-size: 16px; margin: 0;" align="left">
-                                    <img class="w-24" src="https://marathn.test/images/logo.png" style="height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; width: 96px; border-style: none; border-width: 0;" width="96">
+                                    <img class="w-24" src="https://marathn.co/account/images/logo.png" style="height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; width: 96px; border-style: none; border-width: 0;" width="96">
                                   </td>
                                 </tr>
                               </tbody>
