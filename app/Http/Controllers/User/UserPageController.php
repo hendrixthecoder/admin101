@@ -36,7 +36,9 @@ class UserPageController extends Controller
             $depositsCount = $user->deposits()->count();
             $referralBonus = $user->getBonusCredits() - $user->getReversedBonus();
             $profit = $user->getDueProfit() - $user->getReversedProfit();
-            $balance = $user->getBalance();                
+            $balance = $user->getBalance(); 
+            
+            // aloha
 
             return view('user.index', compact(['profit','user', 'deposits', 'balance', 'title', 'plansCount', 'depositsCount', 'referralBonus']));
         }
