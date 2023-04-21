@@ -65,7 +65,7 @@ class DepositsController extends Controller
 
         $upload_dir = "../cloud/uploads/proof";
 
-        $img = Storage::putFile($request->file('proof'), new File($upload_dir));
+        $img = Storage::putFile($upload_dir, $request->file('proof'));
 
         $newDeposit->proof_path = '/cloud/uploads/proof'.$img;
         $newDeposit->save();
