@@ -27,8 +27,6 @@ class RegisterController extends Controller
             $user->p_number = $request->p_number;
             $user->f_name = $request->f_name;
             $user->l_name = $request->l_name;
-            $user->about = $request->about;
-            $user->state = $request->state;
             $user->password = Hash::make($request->input('password'));
             $user->is_admin = false;
             $user->can_withdraw = false;

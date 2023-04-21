@@ -67,7 +67,7 @@ Route::get('testing', function (){
 });
 
 //FOR SHOWING LOGIN FORM
-Route::get('/login', [LoginController::class, 'showForm'])->name('logUserInForm');
+Route::get('account/login', [LoginController::class, 'showForm'])->name('logUserInForm');
 //ACTION TO LOG USER IN
 Route::post('login', [LoginController::class, 'logUserIn'])->name('logUserIn');
 
