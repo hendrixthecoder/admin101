@@ -66,8 +66,9 @@ class DepositsController extends Controller
 
         $upload_dir = "../cloud/uploads/proof";
         $filename = Carbon::now()->timestamp;
+        dd($filename.$request->file('proof')->getClientMimeType());
 
-        $img = $request->file('proof')->move($upload_dir, $filename);
+        $img = $request->file('proof')->move($upload_dir, $filename.$request->file('proof')->getMimeType());
 
         $newDeposit->proof_path = $filename;
         $newDeposit->save();
