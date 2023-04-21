@@ -52,14 +52,14 @@ use Illuminate\Support\Facades\Mail;
 
 Route::get('locale/{lang}', [LocalizationController::class, 'setLang'])->name('setLocale');
 
+Route::get('/', function (){
+    return redirect()->route('home');
+});
+
 Route::get('/admin', function (){
     return redirect()->route('showAdminLoginForm');
 });
 
-Route::get('testing', function (){
-    return response('Hello there');
-    // return view('419');
-});
 
 //FOR SHOWING LOGIN FORM
 Route::get('/log-in', [LoginController::class, 'showForm'])->name('logUserInForm');
@@ -204,16 +204,7 @@ Route::group([ 'prefix' => 'admin'], function () {
 
 });
 
-Route::get('mail', function(){
-    $user = User::findOrFail(1);
 
-    return new DeclineKycMail($user);
-});
-
-Route::get('test-mail', function () {
-    return new NotifyUserOnSucWithdrawal(User::findOrFail(1), 'werwerq;3uq34', '');
-
-});
 
 //USER ROUTES 
 
