@@ -41,9 +41,9 @@
                                 <span class="widget-stats-amount">${{ $balance }}</span>
                                 <span class="widget-stats-info"></span>
                             </div>
-                            <div class="widget-stats-indicator widget-stats-indicator-negative align-self-start">
+                            {{-- <div class="widget-stats-indicator widget-stats-indicator-negative align-self-start">
                                 <i class="material-icons">keyboard_arrow_down</i> 4%
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -60,9 +60,9 @@
                                 <span class="widget-stats-amount">${{ $deposits }}</span>
                                 {{-- <span class="widget-stats-info">{{ $depositsCount }} {{ Str::of('deposit')->plural($depositsCount) }} (Processed and pending inclusive)</span> --}}
                             </div>
-                            <div class="widget-stats-indicator widget-stats-indicator-negative align-self-start">
+                            {{-- <div class="widget-stats-indicator widget-stats-indicator-negative align-self-start">
                                 <i class="material-icons">keyboard_arrow_down</i> 4%
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -79,9 +79,9 @@
                                 <span class="widget-stats-amount">${{ $profit }}</span>
                                 {{-- <span class="widget-stats-info">790 unique this month</span> --}}
                             </div>
-                            <div class="widget-stats-indicator widget-stats-indicator-positive align-self-start">
+                            {{-- <div class="widget-stats-indicator widget-stats-indicator-positive align-self-start">
                                 <i class="material-icons">keyboard_arrow_up</i> 12%
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -100,9 +100,9 @@
                                 <span class="widget-stats-amount">${{ $referralBonus }}</span>
                                 <span class="widget-stats-info"></span>
                             </div>
-                            <div class="widget-stats-indicator widget-stats-indicator-positive align-self-start">
+                            {{-- <div class="widget-stats-indicator widget-stats-indicator-positive align-self-start">
                                 <i class="material-icons">keyboard_arrow_up</i> 12%
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -119,9 +119,9 @@
                                 <span class="widget-stats-amount">{{ $plansCount }}</span>
                                 <span class="widget-stats-info"></span>
                             </div>
-                            <div class="widget-stats-indicator widget-stats-indicator-positive align-self-start">
+                            {{-- <div class="widget-stats-indicator widget-stats-indicator-positive align-self-start">
                                 <i class="material-icons">keyboard_arrow_up</i> 7%
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
