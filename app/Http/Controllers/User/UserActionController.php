@@ -114,10 +114,10 @@ class UserActionController extends Controller
         $user_plan = new UserPlan();
         $user_plan->user_id = $request->user()->id;
         $user_plan->amount = $amount;
-        $user_plan->status = "Active";
         $user_plan->pay_day = $pay_day;
         $user_plan->plan_id = $plan->id;
-        $user_plan->days_past = 0;
+        $user_plan->plan_name = $plan->plan_name;
+        $user_plan->plan_profit = (($amount * $plan->daily_earnings) / 100) * $plan->duration;
         $user_plan->save();
 
         $request->user()->investmentPlans()->attach($plan->id, ['amount' => $amount, 'pay_day' => $pay_day]);

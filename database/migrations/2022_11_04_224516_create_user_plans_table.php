@@ -20,8 +20,8 @@ class CreateUserPlansTable extends Migration
             $table->string('plan_id');
             $table->string('amount');
             $table->string('pay_day');
-            $table->string('status');
-            $table->integer('days_past');
+            $table->string('plan_name');
+            $table->string('plan_profit');
         });
     }
 

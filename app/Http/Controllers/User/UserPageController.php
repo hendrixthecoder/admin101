@@ -10,6 +10,7 @@ use App\Models\PaymentDetails;
 use App\Models\InvestmentPlans;
 use Illuminate\Support\Facades\App;
 use App\Http\Controllers\Controller;
+use App\Models\UserPlan;
 use Illuminate\Support\Facades\Auth;
 
 class UserPageController extends Controller
@@ -95,9 +96,22 @@ class UserPageController extends Controller
 
         $title = env('APP_NAME');
         $user = $request->user();
-        $plans = $user->investmentPlans;
+        
+        $running_community_plans = UserPlan::where('user_id', $user->id)->where('plan_name', 'Community Bot')->where('pay_day','>',now())->get();
 
-        return view('user.my-plans', compact(['plans', 'title']));
+        $com_plan_count = count($running_community_plans);
+
+        $total_comm_profit = number_format($running_community_plans->sum('plan_profit'),0,'.',',');
+
+
+        $running_personal_plans = UserPlan::where('user_id', $user->id)->where('plan_name', 'Personal Bot Pro')->where('pay_day','>',now())->get();
+
+        $pers_plan_count = count($running_personal_plans);
+
+        $total_pers_profit = number_format($running_personal_plans->sum('plan_profit'),0,'.',',');
+
+
+        return view('user.my-plans', compact(['running_community_plans','total_comm_profit','com_plan_count','running_personal_plans','pers_plan_count','total_pers_profit', 'title']));
     }
 
     public function accthist (Request $request) {

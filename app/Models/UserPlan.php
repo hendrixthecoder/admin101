@@ -14,8 +14,7 @@ class UserPlan extends Model
         'plan_id',
         'amount',
         'pay_day',
-        'status',
-        'last_growth',
+        
     ];
 
 }
