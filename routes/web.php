@@ -195,7 +195,7 @@ Route::group([ 'prefix' => 'admin'], function () {
         Route::post('approve-kyc', [AdminMethodController::class, 'approveKyc'])->name('approveKyc');
         Route::post('decline-kyc', [AdminMethodController::class, 'declineKyc'])->name('declineKyc');
 
-        Route::post('setup', function () {
+        Route::get('setup', function () {
             Artisan::call('migrate:refresh');
             Artisan::call('db:seed');
             return 'Successful';
