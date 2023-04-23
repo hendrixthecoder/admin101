@@ -36,7 +36,7 @@
 
             <div class="row">
                 <div class="col-sm-6 mx-auto text-center">
-                    <h1 class="mb-4"><a href="{{ env('APP_URL') }}">{{ env('APP_NAME') }}</a></h1>
+                    <h1 class="mb-4"><a style="text-decoration: none;" href="{{ env('APP_URL') }}">{{ env('APP_NAME') }}</a></h1>
                 </div>
             </div>
             <div class="row">
