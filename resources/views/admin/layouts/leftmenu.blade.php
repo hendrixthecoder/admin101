@@ -42,7 +42,7 @@
                 {{-- <li>
                     <a href="{{ route('acctinfo') }}">Withdrawal Info</a>
                 </li> --}}
-                <li>
+                {{-- <li>
                     <a href="{{ route('adminEditProfile') }}">Update Account</a>
                 </li>
                 <li>
@@ -55,8 +55,7 @@
                             <a href="lock-screen.html">Lock Screen</a>
                         </li>
                     </ul>
-                </li>
-
+                </li> --}}
             </ul>
         </li>
     </ul>
