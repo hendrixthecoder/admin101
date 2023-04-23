@@ -25,7 +25,7 @@
             <a href="{{ route('accthist') }}"><i class="material-icons-two-tone">history_toggle_off</i>@lang('messages.transactionHistory')</a>
         </li>
         <li>
-            <a href="{{ route('refer') }}"><i class="material-icons-two-tone">group_add</i>@lang('messages.referUsers')<span class="badge rounded-pill badge-danger float-end">87</span></a>
+            <a href="{{ route('refer') }}"><i class="material-icons-two-tone">group_add</i>@lang('messages.referUsers')<span class="badge rounded-pill badge-danger float-end"></span></a>
         </li>
         <li>
             <a href="#"><i class="material-icons-two-tone">translate</i>{{ Config::get('languages')[App::getLocale()] }}<span class="badge rounded-pill badge-danger float-end">8</span></a>
