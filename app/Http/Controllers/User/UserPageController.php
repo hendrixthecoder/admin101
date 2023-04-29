@@ -11,11 +11,10 @@ use App\Models\InvestmentPlans;
 use Illuminate\Support\Facades\App;
 use App\Http\Controllers\Controller;
 use App\Models\UserPlan;
-use Illuminate\Support\Facades\Auth;
+
 
 class UserPageController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');
