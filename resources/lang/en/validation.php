@@ -158,6 +158,11 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'email' => 'E-Mail Address',
+        'p_number' => 'Phone Number',
+        'l_name' => 'Last Name',
+        'f_name' => 'First Name',
+    ],
 
 ];
