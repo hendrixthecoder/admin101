@@ -91,8 +91,13 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="settingsInputLastName" class="form-label">Last Name</label>
-                                        <input name="l_name" type="text" class="form-control" id="settingsInputLastName" placeholder="Doe">
+                                        <label for="country" class="form-label">Country</label>
+                                        <select class="form-control" required name="country" id="country" tabindex="-1" style="width: 100%">
+                                            <option value="">Select Country</option>
+                                            @foreach ($countries as $country)
+                                                <option value="{{ $country }}">{{ $country }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row m-t-lg">

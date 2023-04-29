@@ -27,7 +27,8 @@ class UserSeeder extends Seeder
             'status' => 'Active',
             'referred_by' => 3456,
             'can_withdraw' => true,
-            'kyc_status' => 'Unverified'
+            'kyc_status' => 'Unverified',
+            'country' => 'Nigeria'
         ]);
 
         $user->attachRole('user');
@@ -44,7 +45,8 @@ class UserSeeder extends Seeder
             'status' => 'Active',
             'referred_by' => 4555,
             'can_withdraw' => true,
-            'kyc_status' => 'Unverified'
+            'kyc_status' => 'Unverified',
+            'country' => 'Nigeria'
         ]);
 
         $user->attachRole('user');
@@ -61,7 +63,8 @@ class UserSeeder extends Seeder
             'status' => 'Active',
             'referred_by' => 1234,
             'can_withdraw' => true,
-            'kyc_status' => 'Unverified'
+            'kyc_status' => 'Unverified',
+            'country' => 'Nigeria'
         ]);
 
         $user2->attachRole('user');
@@ -78,7 +81,8 @@ class UserSeeder extends Seeder
             'status' => 'Active',
             'referred_by' => 2345,
             'can_withdraw' => true,
-            'kyc_status' => 'Unverified'
+            'kyc_status' => 'Unverified',
+            'country' => 'Nigeria'
         ]);
 
         $user3->attachRole('user');
@@ -94,7 +98,8 @@ class UserSeeder extends Seeder
             'referral_key' => 2345,
             'status' => 'Active',
             'can_withdraw' => true,
-            'kyc_status' => 'Unverified'
+            'kyc_status' => 'Unverified',
+            'country' => 'Nigeria'
         ]);
 
         $admin->attachRole('admin');

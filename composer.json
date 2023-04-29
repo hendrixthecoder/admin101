@@ -13,6 +13,7 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravel/ui": "3.3.0",
+        "monarobase/country-list": "^3.4",
         "santigarcor/laratrust": "^7.1",
         "sarfraznawaz2005/loading": "^1.4"
     },

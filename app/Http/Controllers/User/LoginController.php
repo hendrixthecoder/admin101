@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
