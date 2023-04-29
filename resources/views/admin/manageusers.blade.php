@@ -46,6 +46,7 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">Username</th>
                                 <th scope="col">First Name</th>
+                                <th scope="col">Country</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Phone</th>
                                 <th scope="col">Inv. Plan</th>
@@ -61,6 +62,7 @@
                                 <th scope="row">{{ $user->id }}</th>
                                 <td>{{ $user->username }}</td>
                                 <td>{{ $user->f_name }}</td>
+                                <td>{{ $user->country }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->p_number }}</td>
                                 <td>Plan</td>
