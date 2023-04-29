@@ -36,9 +36,9 @@ class UserPageController extends Controller
             $referralBonus = number_format($user->getBonusCredits() - $user->getReversedBonus(), 0, ".",",");
             $profit = number_format($user->getDueProfit() - $user->getReversedProfit(), 0, ".",",");
             $balance = number_format($user->getBalance(), 0, '.',','); 
-            
+            $withdrawalCount = number_format(count($user->withdrawals), 0, '.',',');
 
-            return view('user.index', compact(['profit','user', 'balance', 'title', 'plansCount', 'depositsCount', 'referralBonus']));
+            return view('user.index', compact(['profit','user', 'balance', 'title', 'plansCount', 'depositsCount', 'referralBonus', 'withdrawalCount']));
         }
 
     }

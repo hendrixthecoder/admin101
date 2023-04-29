@@ -80,5 +80,6 @@
         'idCard' => 'ID Card',
         'photo' => 'Photo',
         'planJoinSucc' => 'Plan has been joined successfully!',
+        'totalWithdrawal' => 'Total Withdrawal',
     ]
 ?>
