@@ -53,7 +53,6 @@
                                 <div class="modal-body">
                                     <form class="row g-3" action="{{ route('makePayment') }}" method="POST">
                                         @csrf
-                                        @method('GET')
                                         <div class="col-12">
                                             <label for="inputAddress" class="form-label">@lang('messages.amount')</label>
                                             <input type="text" name="amount" class="form-control" id="inputAddress" placeholder="">

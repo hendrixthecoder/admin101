@@ -211,7 +211,7 @@ Route::group([ 'prefix' => 'admin'], function () {
 Route::group(['middleware' => 'auth', 'namespace' => 'User'], function () {
     Route::get('/dashboard', [UserPageController::class, 'home'])->name('home');
 
-    Route::get('/payment', [UserPageController::class, 'makePayment'])->name('makePayment');
+    Route::post('/payment', [UserPageController::class, 'makePayment'])->name('makePayment');
 
     Route::get('/investment-plans', [UserPageController::class, 'investplans'])->name('investplans');
 
