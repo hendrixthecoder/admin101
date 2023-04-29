@@ -33,14 +33,13 @@ class UserPageController extends Controller
             $user = $request->user();
 
             $plansCount = $user->investmentPlans()->count();
-            $deposits = number_format($user->deposits()->sum('amount'), 0,".",",");
             $depositsCount = $user->deposits()->count();
             $referralBonus = number_format($user->getBonusCredits() - $user->getReversedBonus(), 0, ".",",");
             $profit = number_format($user->getDueProfit() - $user->getReversedProfit(), 0, ".",",");
             $balance = number_format($user->getBalance(), 0, '.',','); 
             
 
-            return view('user.index', compact(['profit','user', 'deposits', 'balance', 'title', 'plansCount', 'depositsCount', 'referralBonus']));
+            return view('user.index', compact(['profit','user', 'balance', 'title', 'plansCount', 'depositsCount', 'referralBonus']));
         }
 
     }

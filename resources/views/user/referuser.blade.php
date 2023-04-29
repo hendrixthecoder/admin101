@@ -34,7 +34,7 @@
                             <p><strong>{{ $user->referral_key }}</strong></p>
                             <p class="text-muted d-block">{{ $referee ?? '' }}</p>    
                             <div class="input-group">
-                                <input type="disabled" class="form-control form-control-solid-bordered" value="{{ env('APP_URL') }}account/refer/{{ $user->referral_key }}" aria-label="{{ env('APP_URL') }}/account/refer/{{ $user->referral_key }}" aria-describedby="share-link1">
+                                <input type="disabled" id="referral_link_share" class="form-control form-control-solid-bordered" value="{{ env('APP_URL') }}account/refer/{{ $user->referral_key }}" aria-label="{{ env('APP_URL') }}account/refer/{{ $user->referral_key }}" aria-describedby="share-link1">
                                 <button class="btn btn-primary" type="button" id="share-link1"><i class="material-icons no-m fs-5">content_copy</i></button>
                             </div>
                             
@@ -72,5 +72,16 @@
         </div>
     </div>
 </div>
+<script>
+    $('#share-link1').click(function(){
+    "use strict";
+        var copyText = document.getElementById("referral_link_share");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        /*For mobile devices*/
+        document.execCommand("copy");
+        
+        alert('Referral Link Copied');
+  });
+</script>
 @endsection
-    
