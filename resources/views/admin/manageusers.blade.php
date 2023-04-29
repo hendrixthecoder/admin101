@@ -49,7 +49,6 @@
                                 <th scope="col">Country</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Phone</th>
-                                <th scope="col">Inv. Plan</th>
                                 <th scope="col">Can Withdraw</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">Date registered</th>
@@ -65,7 +64,6 @@
                                 <td>{{ $user->country }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->p_number }}</td>
-                                <td>Plan</td>
                                 <td>{{ $user->can_withdraw ? "Yes" : "No" }}</td>
                                 <td>{{ $user->status }}</td>
                                 <td>{{ $user->created_at }}</td>
