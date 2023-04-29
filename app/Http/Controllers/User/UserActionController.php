@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\InvestmentPlans;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Monarobase\CountryList\CountryListFacade;
 
 class UserActionController extends Controller
 {
@@ -128,13 +129,14 @@ class UserActionController extends Controller
 
     public function referralHandling ($key) {
         $title = env('APP_NAME');
+        $countries = CountryListFacade::getList('en');
         $user = User::where('referral_key', $key)->first();
 
         if($user){
-            return view('auth.register', compact(['title','key']));
+            return view('auth.register', compact(['title','key', 'countries']));
         }
 
-        return view('auth.no-refer', compact(['title']));
+        return view('auth.no-refer', compact(['title', 'countries']));
     }
 
     public function changePassword (Request $request) {
