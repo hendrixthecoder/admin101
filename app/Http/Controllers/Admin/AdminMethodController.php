@@ -157,7 +157,6 @@ class AdminMethodController extends Controller
                 $user->email = $request->email;
             }
 
-    
             $user->save();
     
             return back()->with('message', 'Profile Updated successfully!');

@@ -58,7 +58,6 @@
                         <div class="card-body">
                             <div class="card-title">
                                 <p class="auth-description">Please enter your credentials to create an account.<br>Already have an account? <a href="{{ route('logUserInForm') }}">Sign In</a></p>
-        
                             </div>
                             <form action="{{ route('storeUser') }}" method="post" class="auth-credentials m-b-xxl" id="reg-form">
                                 @csrf
@@ -84,13 +83,16 @@
                                         <input name="l_name" type="text" class="form-control" id="settingsInputLastName" placeholder="Doe">
                                     </div>
                                 </div>
-                                
                                 <div class="row m-t-lg">
                                     <div class="col-md-6">
                                         <label for="settingsInputUserName" class="form-label">Username</label>
                                         <div class="input-group">
                                             <input name="username" type="text" class="form-control" id="settingsInputUserName" aria-describedby="settingsInputUserName-add" placeholder="Username">
                                         </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="settingsInputLastName" class="form-label">Last Name</label>
+                                        <input name="l_name" type="text" class="form-control" id="settingsInputLastName" placeholder="Doe">
                                     </div>
                                 </div>
                                 <div class="row m-t-lg">
