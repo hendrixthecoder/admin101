@@ -23,7 +23,7 @@ class StoreUserRequest extends FormRequest
             }else{
                 return true;
             }
-    }
+        }
         return false;
     }
 
@@ -41,7 +41,6 @@ class StoreUserRequest extends FormRequest
             'f_name' => 'bail|required|alpha',
             'l_name' => 'bail|required|alpha',
             'password' => 'bail|required|min:8',
-            'can_withdraw' => 'required|boolean'
         ];
     }
 }

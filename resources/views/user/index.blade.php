@@ -29,7 +29,7 @@
         </div>
         @endif
         <div class="row">
-            <div class="col-xl-4">
+            <div class="col-xl-6">
                 <div class="card widget widget-stats">
                     <div class="card-body">
                         <div class="widget-stats-container d-flex">
@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4">
+            <div class="col-xl-6">
                 <div class="card widget widget-stats">
                     <div class="card-body">
                         <div class="widget-stats-container d-flex">
@@ -69,7 +69,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xl-4">
+            <div class="col-xl-6">
                 <div class="card widget widget-stats">
                     <div class="card-body">
                         <div class="widget-stats-container d-flex">
@@ -88,7 +88,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4">
+            <div class="col-xl-6">
                 <div class="card widget widget-stats">
                     <div class="card-body">
                         <div class="widget-stats-container d-flex">
