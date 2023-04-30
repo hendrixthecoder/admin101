@@ -29,6 +29,14 @@
         </div>
         @endif
         <div class="row">
+            <div class="col">
+                <a href="{{ route('deposits') }}" type="button" class="btn btn-primary mb-4 mt-2">
+                    <i class="material-icons-two-tone">add</i>@lang('messages.newDeposits')
+                </a>
+                    
+            </div>
+        </div>
+        <div class="row">
             <div class="col-xl-6">
                 <div class="card widget widget-stats">
                     <div class="card-body">
