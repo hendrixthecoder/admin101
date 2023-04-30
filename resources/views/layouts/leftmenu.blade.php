@@ -7,9 +7,6 @@
             <a href="{{ route('home') }}" class="active"><i class="material-icons-two-tone">dashboard</i>@lang('messages.dashboard')</a>
         </li>
         <li>
-            <a href="{{ route('support') }}"><i class="material-icons-two-tone">contact_support</i>@lang('messages.support')</a>
-        </li>
-        <li>
             <a href="{{ route('deposits') }}"><i class="material-icons-two-tone">credit_card</i>@lang('messages.deposits')</a>
         </li>
         <li>
@@ -26,6 +23,9 @@
         </li>
         <li>
             <a href="{{ route('refer') }}"><i class="material-icons-two-tone">group_add</i>@lang('messages.referUsers')<span class="badge rounded-pill badge-danger float-end"></span></a>
+        </li>
+        <li>
+            <a href="{{ route('support') }}"><i class="material-icons-two-tone">contact_support</i>@lang('messages.support')</a>
         </li>
         <li>
             <a href="#"><i class="material-icons-two-tone">translate</i>{{ Config::get('languages')[App::getLocale()] }}<span class="badge rounded-pill badge-danger float-end">8</span></a>

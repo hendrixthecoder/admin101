@@ -6,6 +6,17 @@
 <div class="content-wrapper">
     <div class="container">
         <div class="row">
+            <div class="col-xl-6">
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                    <div id="tradingview_879e7"></div>
+                    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL stock chart</span></a> by TradingView</div>
+
+                </div>
+                <!-- TradingView Widget END -->
+            </div>
+        </div>
+        <div class="row">
             <div class="col">
                 <div class="page-description">
                     <h1>@lang('messages.dashboard')</h1>
@@ -174,6 +185,26 @@
       height: 600px
     }
     </style>
+
+    {{-- Trading View Scripts --}}
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script type="text/javascript">
+    new TradingView.widget(
+    {
+    "autosize": true,
+    "symbol": "NASDAQ:AAPL",
+    "interval": "D",
+    "timezone": "Etc/UTC",
+    "theme": "dark",
+    "style": "1",
+    "locale": "en",
+    "toolbar_bg": "#f1f3f6",
+    "enable_publishing": false,
+    "allow_symbol_change": true,
+    "container_id": "tradingview_879e7"
+  }
+    );
+    </script>
     
     <!-- Resources -->
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
