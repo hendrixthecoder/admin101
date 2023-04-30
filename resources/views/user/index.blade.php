@@ -241,7 +241,7 @@
         name: "Monica",
         steps: 45688,
         pictureSettings: {
-          src: "https://www.amcharts.com/wp-content/uploads/2019/04/monica.jpg"
+          src: "https://marathn.co/account/images/logo.png"
         }
       },
       {
