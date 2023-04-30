@@ -52,6 +52,27 @@
                 <div class="card widget widget-stats">
                     <div class="card-body">
                         <div class="widget-stats-container d-flex">
+                            <div class="widget-stats-icon widget-stats-icon-primary">
+                                <i class="material-icons-outlined">paid</i>
+                            </div>
+                            <div class="widget-stats-content flex-fill">
+                                <span class="widget-stats-title">@lang('messages.packCap')</span>
+                                <span class="widget-stats-amount">${{ $running_plan_capital }}</span>
+                                <span class="widget-stats-info"></span>
+                            </div>
+                            {{-- <div class="widget-stats-indicator widget-stats-indicator-negative align-self-start">
+                                <i class="material-icons">keyboard_arrow_down</i> 4%
+                            </div> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="card widget widget-stats">
+                    <div class="card-body">
+                        <div class="widget-stats-container d-flex">
                             <div class="widget-stats-icon widget-stats-icon-warning">
                                 <i class="material-icons-outlined">new_label</i>
                             </div>
@@ -67,8 +88,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
             <div class="col-xl-6">
                 <div class="card widget widget-stats">
                     <div class="card-body">
@@ -88,6 +107,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col-xl-6">
                 <div class="card widget widget-stats">
                     <div class="card-body">
@@ -107,8 +128,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
             <div class="col-xl-6">
                 <div class="card widget widget-stats">
                     <div class="card-body">

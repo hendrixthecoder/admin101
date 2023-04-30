@@ -31,6 +31,7 @@ class UserPageController extends Controller
 
             $user = $request->user();
 
+            $running_plan_capital = number_format(UserPlan::where('user_id', $user->id)->where('pay_day','>',now())->sum('amount'),0,'.',',');
             $plansCount = $user->investmentPlans()->count();
             $depositsCount = $user->deposits()->count();
             $referralBonus = number_format($user->getBonusCredits() - $user->getReversedBonus(), 0, ".",",");
@@ -38,7 +39,7 @@ class UserPageController extends Controller
             $balance = number_format($user->getBalance(), 0, '.',','); 
             $withdrawalCount = number_format(count($user->withdrawals), 0, '.',',');
 
-            return view('user.index', compact(['profit','user', 'balance', 'title', 'plansCount', 'depositsCount', 'referralBonus', 'withdrawalCount']));
+            return view('user.index', compact(['running_plan_capital','profit','user', 'balance', 'title', 'plansCount', 'depositsCount', 'referralBonus', 'withdrawalCount']));
         }
 
     }

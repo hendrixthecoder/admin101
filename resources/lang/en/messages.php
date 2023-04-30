@@ -3,6 +3,7 @@
         'dashboard' => 'Dashboard',
         'support' => 'Support',
         'deposits' => 'Deposits',
+        'packCap' => 'Package Capital',
         'newDeposits' => 'New Deposit',
         'withdrawals' => 'Withdrawals',
         'newWithdrawals' => 'New Withdrawals',
