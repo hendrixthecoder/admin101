@@ -13,6 +13,7 @@
         'languages' => 'Languages',
         'account' => 'Account',
         'balance' => 'Balance',
+        'wallet' => 'Wallet',
         'profits' => 'Profits',
         'bonus' => 'Bonus',
         'referralBonus' => 'Referral Bonus',

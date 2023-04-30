@@ -13,6 +13,7 @@
         'languages' => 'Languages',
         'account' => 'खाता',
         'balance' => 'संतुलन',
+        'wallet' => 'बटुआ',
         'profits' => 'मुनाफे',
         'bonus' => 'बक्शीश',
         'referralBonus' => 'रेफरल बोनस',

@@ -13,6 +13,7 @@
         'languages' => 'Langages',
         'account' => 'Compte',
         'balance' => 'Équilibre',
+        'wallet' => 'Portefeuille',
         'profits' => 'Bénéfices',
         'bonus' => 'Prime',
         'referralBonus' => 'Prime de Parrainage',

@@ -13,6 +13,7 @@
         'languages' => '语言',
         'account' => '帐户',
         'balance' => '平衡',
+        'wallet' => '钱包',
         'profits' => '利润',
         'bonus' => '奖金',
         'referralBonus' => '推荐奖金',

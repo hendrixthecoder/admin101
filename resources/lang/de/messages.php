@@ -13,6 +13,7 @@
         'languages' => 'Languages',
         'account' => 'Konto',
         'balance' => 'Gleichgewicht',
+        'wallet' => 'Geldbörse',
         'profits' => 'Gewinne',
         'bonus' => 'Bonus',
         'referralBonus' => 'Empfehlungsbonus',

@@ -13,6 +13,7 @@
         'languages' => 'Языки',
         'account' => 'Счет',
         'balance' => 'Баланс',
+        'wallet' => 'Кошелек',
         'profits' => 'прибыль',
         'bonus' => 'Бонус',
         'referralBonus' => 'Направление бонус',

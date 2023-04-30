@@ -13,6 +13,7 @@
         'languages' => 'Idiomas',
         'account' => 'Cuenta',
         'balance' => 'Balance',
+        'wallet' => 'Billetera',
         'profits' => 'Ganancias',
         'bonus' => 'Primo',
         'referralBonus' => 'Bono de recomendación',

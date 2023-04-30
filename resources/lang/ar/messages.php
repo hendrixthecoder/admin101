@@ -13,6 +13,7 @@
         'languages' => 'اللغات',
         'account' => 'حساب',
         'balance' => 'توازن',
+        'wallet' => 'محفظة',
         'profits' => 'أرباح',
         'bonus' => 'علاوة',
         'referralBonus' => 'مكافأة الإحالة',

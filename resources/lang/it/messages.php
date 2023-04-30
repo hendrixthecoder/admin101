@@ -13,6 +13,7 @@
         'languages' => 'Le lingue',
         'account' => 'Account',
         'balance' => 'Bilancia',
+        'wallet' => 'Portafoglio',
         'profits' => 'Profitti',
         'bonus' => 'Bonus',
         'referralBonus' => 'Bonus di presentazione',
