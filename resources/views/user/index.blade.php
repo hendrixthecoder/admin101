@@ -6,10 +6,10 @@
 <div class="content-wrapper">
     <div class="container">
         <div class="row">
-            <div class="col-xl-6">
+            <div class="col-xl-6 " >
                 <!-- TradingView Widget BEGIN -->
-                <div class="tradingview-widget-container">
-                    <div id="tradingview_879e7"></div>
+                <div class="tradingview-widget-container" >
+                    <div id="tradingview_879e7" style="height: 300px"></div>
                 </div>
                 <!-- TradingView Widget END -->
             </div>
