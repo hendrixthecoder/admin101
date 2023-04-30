@@ -1,6 +1,6 @@
 ## About This App
 
-Investment Company Admin Dashboard using Laravel 8 and Bootstrap supporting CRUD, KYC Verification, Referral System and Automatic and Manual Reward system, this app was created to be used with CMS like Wordpress.
+Investment Company Admin Dashboard using Laravel 8 and Bootstrap supporting CRUD, KYC Verification, Referral System and Automatic and Manual Reward system, this app was created to be used with CMS like Wordpress, it also features 8 different languages out of the box.
 
 ## Setting up This App
 - After cloning the repo, move the public directory out of the root directory of the app.
