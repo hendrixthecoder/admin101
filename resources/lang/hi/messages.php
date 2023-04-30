@@ -3,6 +3,7 @@
         'dashboard' => 'डैशबोर्ड',
         'support' => 'सहायता',
         'deposits' => 'जमा',
+        'packCap' => 'पैकेज पूँजी',
         'newDeposits' => 'नया जमा',
         'withdrawals' => 'निकासी',
         'newWithdrawals' => 'नई निकासी',

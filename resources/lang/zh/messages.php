@@ -3,6 +3,7 @@
         'dashboard' => '仪表板',
         'support' => '支持',
         'deposits' => '存款',
+        'packCap' => '包装资本',
         'newDeposits' => '新存款',
         'withdrawals' => '取款',
         'newWithdrawals' => '新提款',

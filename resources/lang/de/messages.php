@@ -3,6 +3,7 @@
         'dashboard' => 'Armaturenbrett',
         'support' => 'Unterstützung',
         'deposits' => 'Einlagen',
+        'packCap' => 'Paketkapital',
         'newDeposits' => 'Neue Einzahlung',
         'withdrawals' => 'Abhebungen',
         'newWithdrawals' => 'Neue Auszahlungen',

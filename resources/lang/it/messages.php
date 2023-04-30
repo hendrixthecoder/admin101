@@ -3,6 +3,7 @@
         'dashboard' => 'Pannello di controllo',
         'support' => 'Supporto',
         'deposits' => 'Depositi',
+        'packCap' => 'Capitale del pacchetto',
         'newDeposits' => 'Nuovo Deposito',
         'withdrawals' => 'Prelievi',
         'newWithdrawals' => 'Nuovi prelievi',

@@ -3,6 +3,7 @@
         'dashboard' => 'لوحة القيادة',
         'support' => 'يدعم',
         'deposits' => 'الودائع',
+        'packCap' => 'رأس المال',
         'newDeposits' => 'الودائع الجديدة',
         'withdrawals' => 'الانسحابات',
         'newWithdrawals' => 'سحب جديد',

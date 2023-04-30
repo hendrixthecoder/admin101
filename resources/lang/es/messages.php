@@ -3,6 +3,7 @@
         'dashboard' => 'Panel',
         'support' => 'Apoyo',
         'deposits' => 'Depósitos',
+        'packCap' => 'Capital de paquete',
         'newDeposits' => 'Nuevo Depósito',
         'withdrawals' => 'Retiros',
         'newWithdrawals' => 'Nuevos Retiros',

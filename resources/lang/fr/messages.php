@@ -3,6 +3,7 @@
         'dashboard' => 'Tableau de bord',
         'support' => 'Soutien',
         'deposits' => 'Dépôts',
+        'packCap' => 'Capital de package',
         'newDeposits' => 'Nouveau Dépôt',
         'withdrawals' => 'Retraits',
         'newWithdrawals' => 'Nouveaux Retraits',

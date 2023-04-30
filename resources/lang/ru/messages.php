@@ -3,6 +3,7 @@
         'dashboard' => 'Панель приборов',
         'support' => 'Поддерживать',
         'deposits' => 'Депозиты',
+        'packCap' => 'Пакетный капитал',
         'newDeposits' => 'Новый депозит',
         'withdrawals' => 'Снятие средств',
         'newWithdrawals' => 'Новые выплаты',
