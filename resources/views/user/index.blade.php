@@ -10,8 +10,6 @@
                 <!-- TradingView Widget BEGIN -->
                 <div class="tradingview-widget-container">
                     <div id="tradingview_879e7"></div>
-                    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL stock chart</span></a> by TradingView</div>
-
                 </div>
                 <!-- TradingView Widget END -->
             </div>

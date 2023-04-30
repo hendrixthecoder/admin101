@@ -46,7 +46,7 @@
 </head>
 <body>
     
-    <div class="loader"></div>
+    {{-- <div class="loader"></div> --}}
     @include('user.layouts.headsection')
     <script src="{{ asset('js/custom.js') }}"></script>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
