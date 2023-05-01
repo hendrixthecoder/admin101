@@ -6,8 +6,7 @@ use App\Models\Withdrawal;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Settings;
-
-
+use NumberFormatter;
 
 class WithdrawalController extends Controller
 {
@@ -60,7 +59,7 @@ class WithdrawalController extends Controller
 
                             if($request->amount >= $siteSettings->minimum_withdrawal){
 
-                                $balance = $user->getBalance();
+                                $balance = number_format($user->getDueProfit() - $user->getReversedProfit(), 0, ".",",");
                 
                                 if($request->amount >= $balance){
                                     return back()->with('error', trans('auth.insufficientFunds'));

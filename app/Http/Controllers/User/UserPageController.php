@@ -85,7 +85,7 @@ class UserPageController extends Controller
 
         //GET USER BALANCE
 
-        $balance = number_format($user->getBalance(), 0, '.',',');
+        $balance = number_format($user->getDueProfit() - $user->getReversedProfit(), 0, ".",",");
 
         return view('user.withdrawals', compact(['siteSettings','transactions', 'balance', 'title']));
     }
