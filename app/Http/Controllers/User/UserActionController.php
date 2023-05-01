@@ -24,7 +24,7 @@ class UserActionController extends Controller
         
         $amount = $validated['amount'];
         $settings = Settings::find(1);
-        $balance = $request->user()->getBalance();
+        $balance = $request->user()->deposits()->where('status', 'Processed')->sum('amount');
         $plan = InvestmentPlans::findOrFail($id);
 
         if($balance < $plan->min_deposit || $amount > $plan->max_deposit || $amount < $plan->min_deposit) {

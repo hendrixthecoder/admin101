@@ -46,7 +46,7 @@
                             </div>
                             <div class="widget-stats-content flex-fill">
                                 <span class="widget-stats-title">@lang('messages.wallet')</span>
-                                <span class="widget-stats-amount">${{ $balance }}</span>
+                                <span class="widget-stats-amount">${{ $walletBalance }}</span>
                                 <span class="widget-stats-info"></span>
                             </div>
                             {{-- <div class="widget-stats-indicator widget-stats-indicator-negative align-self-start">

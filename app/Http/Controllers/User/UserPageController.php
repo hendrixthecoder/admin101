@@ -4,7 +4,6 @@ namespace App\Http\Controllers\User;
 
 use App\Models\User;
 use App\Models\Settings;
-use App\Events\NewROISent;
 use Illuminate\Http\Request;
 use App\Models\PaymentDetails;
 use App\Models\InvestmentPlans;
@@ -21,7 +20,6 @@ class UserPageController extends Controller
     }
 
     public function home (Request $request) {
-
         $title = env('APP_NAME');
         
         if($request->user()->hasRole('admin')){
@@ -33,13 +31,14 @@ class UserPageController extends Controller
 
             $running_plan_capital = number_format(UserPlan::where('user_id', $user->id)->where('pay_day','>',now())->sum('amount'),0,'.',',');
             $plansCount = $user->investmentPlans()->count();
-            $depositsCount = $user->deposits()->count();
+            
+            $walletBalance = $user->deposits()->where('status', 'Processed')->sum('amount');
             $referralBonus = number_format($user->getBonusCredits() - $user->getReversedBonus(), 0, ".",",");
             $profit = number_format($user->getDueProfit() - $user->getReversedProfit(), 0, ".",",");
             $balance = number_format($user->getBalance(), 0, '.',','); 
             $withdrawalCount = number_format(count($user->withdrawals), 0, '.',',');
 
-            return view('user.index', compact(['running_plan_capital','profit','user', 'balance', 'title', 'plansCount', 'depositsCount', 'referralBonus', 'withdrawalCount']));
+            return view('user.index', compact(['running_plan_capital','walletBalance','profit','user', 'balance', 'title', 'plansCount', 'referralBonus', 'withdrawalCount']));
         }
 
     }
