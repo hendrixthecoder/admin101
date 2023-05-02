@@ -115,6 +115,14 @@ class User extends Authenticatable implements AuthCanResetPassword
         return $this->getReversedProfit() + $this->getReversedBonus() + $this->getReversed();
     }
 
+    public function totalAmountInvested () {
+        return $this->transactions->where('source', 'Capital')->sum('amount');
+    }
+
+    public function getWalletBalance () {
+        return $this->deposits->where('status', 'Processed')->sum('amount') - $this->totalAmountInvested();
+    }
+
     public function getBalance () {
         $processedDeposits = $this->deposits->where('status', 'Processed')->sum('amount');
 

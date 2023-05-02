@@ -126,7 +126,7 @@
                 <div class="col">
                     <div class="card mt-5">
                         <div class="card-header">
-                          @lang('messages.balance')
+                          @lang('messages.wallet')
                         </div>
                         <div class="card-body">
                           <blockquote class="blockquote mb-0">

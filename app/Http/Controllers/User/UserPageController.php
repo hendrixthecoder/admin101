@@ -32,8 +32,8 @@ class UserPageController extends Controller
             $running_plan_capital = number_format(UserPlan::where('user_id', $user->id)->where('pay_day','>',now())->sum('amount'),0,'.',',');
             $plansCount = $user->investmentPlans()->count();
 
-            $walletBalance = number_format($user->deposits()->where('status', 'Processed')->sum('amount') - $user->returnAmountInvested(), 0,'.',',');
-            // dd($walletBalance);
+            $walletBalance = number_format($user->getWalletBalance(), 0,'.',',');
+
             $referralBonus = number_format($user->getBonusCredits() - $user->getReversedBonus(), 0, ".",",");
             $profit = number_format($user->getDueProfit() - $user->getReversedProfit(), 0, ".",",");
             $balance = number_format($user->getBalance(), 0, '.',','); 
@@ -48,7 +48,7 @@ class UserPageController extends Controller
         $title = env('APP_NAME');
         $user = $request->user();
         $plans = InvestmentPlans::all();
-        $balance = number_format($user->getBalance(), 0, '.',',');
+        $balance = number_format($user->getWalletBalance(), 0,'.',',');
 
         return view('user.investplans', compact(['plans', 'title', 'user', 'balance']));
     }
@@ -72,7 +72,7 @@ class UserPageController extends Controller
         $deposits = $user->deposits()->paginate(2);
         
         //GET USER BALANCE
-        $balance = number_format($user->deposits()->where('status', 'Processed')->sum('amount') - $user->returnAmountInvested(), 0,'.',',');
+        $balance = number_format($user->getWalletBalance(), 0,'.',',');
 
         return view('user.deposits', compact(['balance', 'deposits', 'title']));
     }
@@ -86,7 +86,7 @@ class UserPageController extends Controller
 
         //GET USER BALANCE
 
-        $balance = number_format($user->getDueProfit() - $user->getReversedProfit(), 0, ".",",");
+        $balance = number_format($user->getWalletBalance(), 0,'.',',');
 
         return view('user.withdrawals', compact(['siteSettings','transactions', 'balance', 'title']));
     }
