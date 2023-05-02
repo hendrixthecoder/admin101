@@ -17,100 +17,105 @@
             </div>
             @endif
             <div class="row">
-                <div class="col-xl-8">
-                    <div class="page-description">
-                        <h1>@lang('messages.yourPackageText')</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                @if ($running_community_plans->isEmpty())
-                <div class="card widget widget-stats">
-                    <div class="card-body">
-                        <div class="widget-tweet-container">
-                            <div class="widget-tweet-content">
-                                <h3>@lang('messages.noPlans')</h3>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                        </div>
-                    </div>
-                </div>
-                @else
-                <div class="col-xl-6">
-                    <div class="card widget widget-list">
-                        <div class="card-header">
-                            <h5 class="card-title">Community Bot 🤖<span class="badge badge-info badge-style-light">FIXED PRICE</span></h5>
-                        </div>
-                        <div class="card-body">
-                            {{-- <span class="text-muted m-b-xs d-block">PLAN AMOUNT: $</span> --}}
-                            <ul class="widget-list-content list-unstyled">
-                                <li class="widget-list-item widget-list-item-blue">
-                                    <span class="widget-list-item-description">
-                                        <span class="widget-list-item-description-title">
-                                            How many packages owned:
-                                        </span>
-                                    </span>
-                                    <span class="widget-list-item-transaction-amount-positive">{{ $com_plan_count }}</span>
-                                </li>                                                                  
-                                <li class="widget-list-item widget-list-item-blue">
-                                    <span class="widget-list-item-description">
-                                        <span class="widget-list-item-description-title">
-                                            Total Profit Expected($):
-                                        </span>
-                                    </span>
-                                    <span class="widget-list-item-transaction-amount-positive">{{ $total_comm_profit }}</span>
-                                </li>                                                                  
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                @endif
-                
-                @if ($running_personal_plans->isEmpty())
-                <div class="card widget widget-stats">
-                    <div class="card-body">
-                        <div class="widget-tweet-container">
-                            <div class="widget-tweet-content">
-                                <h3>@lang('messages.noPlans')</h3>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                        </div>
-                    </div>
-                </div>
-                @else
-                <div class="col-xl-6">
-                    <div class="card widget widget-list">
-                        <div class="card-header">
-                            <h5 class="card-title">Personal Bot Pro 🤖<span class="badge badge-info badge-style-light">FIXED PRICE</span></h5>
-                        </div>
-                    <div class="card-body">
-                        {{-- <span class="text-muted m-b-xs d-block">PLAN AMOUNT: $</span> --}}
-                        <ul class="widget-list-content list-unstyled">
-                            <li class="widget-list-item widget-list-item-blue">
-                                <span class="widget-list-item-description">
-                                    <span class="widget-list-item-description-title">
-                                        How many packages owned:
-                                    </span>
-                                </span>
-                                <span class="widget-list-item-transaction-amount-positive">{{ $pers_plan_count }}</span>
-                            </li>                                                                  
-                            <li class="widget-list-item widget-list-item-blue">
-                                <span class="widget-list-item-description">
-                                    <span class="widget-list-item-description-title">
-                                        Total Profit Expected($):
-                                    </span>
-                                </span>
-                                <span class="widget-list-item-transaction-amount-positive">{{ $total_pers_profit }}</span>
-                            </li>                                                                  
+                <div class="col">
+                    <div class="page-description page-description-tabbed">
+                        <h1 id="">@lang('messages.myInvestmentPlans')</h1>
+
+                        <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="account-tab" data-bs-toggle="tab" data-bs-target="#community" type="button" role="tab" aria-controls="community" aria-selected="true">Community Bot🤖</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="security-tab" data-bs-toggle="tab" data-bs-target="#personal" type="button" role="tab" aria-controls="personal" aria-selected="false">Personal Bot Pro🤖</button>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            @endif
-        </div>
-
+            <div class="row">
+                <div class="col">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="community" role="tabpanel" aria-labelledby="community-tab">
+                            <div class="card">
+                                <div class="card-body">
+                                    @if ($community_plans->isEmpty())
+                                        You have no ROI yet! Join a plan to start earning.
+                                    @else
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">ID</th>
+                                                    <th scope="col">Amount</th>
+                                                    <th scope="col">Days Left</th>
+                                                    <th scope="col">Date Bought</th>
+                                                    <th scope="col">Profit Expected</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach ($community_plans as $community_plan) 
+                                                <tr>
+                                                    <th scope="row">{{ $community_plan->id }}</th>
+                                                    <td>${{ $community_plan->amount }}</td>
+                                                    <td>{{ $community_plan->days_left }}</td>
+                                                    <td>{{ $community_plan->created_at }}</td>
+                                                    <td>${{ $community_plan->plan_profit }}</td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                        </table>
+                                        <div class="row">
+                                            <div class="col">
+                                                {{ $community_plans->links() }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="personal" role="tabpanel" aria-labelledby="personal-tab">
+                            <div class="card">
+                                <div class="card-body">
+                                    @if ($personal_plans->isEmpty())
+                                        You have no ROI yet! Join a plan to start earning.
+                                    @else
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">ID</th>
+                                                    <th scope="col">Amount</th>
+                                                    <th scope="col">Message</th>
+                                                    <th scope="col">Date Bought</th>
+                                                    <th scope="col">Profit Expected</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach ($personal_plans as $personal_plan) 
+                                                <tr>
+                                                    <th scope="row">{{ $eachRoi->id }}</th>
+                                                    <td>${{ $personal_plan->amount }}</td>
+                                                    <td>{{ $personal_plan->source }}</td>
+                                                    <td>{{ $personal_plan->created_at }}</td>
+                                                    <td>${{ $personal_plan->plan_profit }}</td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                        </table>
+                                        <div class="row">
+                                            <div class="col">
+                                                {{ $personal_plans->links() }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

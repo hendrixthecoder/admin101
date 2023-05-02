@@ -14,7 +14,16 @@ class UserPlan extends Model
         'plan_id',
         'amount',
         'pay_day',
-        
+        'days_left',
     ];
+
+    protected $casts = [
+        'pay_day' => 'datetime'
+    ];
+
+    public function getDaysLeftAttribute ($value) {
+        // Trick to get days left for each plan
+        return ($this->pay_day)->diffInDays(now());
+    }
 
 }

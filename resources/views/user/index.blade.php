@@ -36,7 +36,7 @@
             </div>
             <div class="col">
                 <a href="{{ route('mywithdrawals') }}" type="button" class="btn btn-primary mb-4 mt-2">
-                    <i class="material-icons-two-tone">add</i>@lang('messages.newWithdrawals')
+                    <i class="material-icons-two-tone">add</i>@lang('messages.withdrawals')
                 </a>
             </div>
         </div>

@@ -10,7 +10,7 @@ use App\Models\InvestmentPlans;
 use Illuminate\Support\Facades\App;
 use App\Http\Controllers\Controller;
 use App\Models\UserPlan;
-
+use Carbon\Carbon;
 
 class UserPageController extends Controller
 {
@@ -35,7 +35,7 @@ class UserPageController extends Controller
             $walletBalance = number_format($user->getWalletBalance(), 0,'.',',');
 
             $referralBonus = number_format($user->getBonusCredits() - $user->getReversedBonus(), 0, ".",",");
-            $profit = number_format($user->getDueProfit() - $user->getReversedProfit(), 0, ".",",");
+            $profit = number_format($user->getDeductableProfit(), 0, ".",",");
             $balance = number_format($user->getBalance(), 0, '.',','); 
             $withdrawalCount = number_format(count($user->withdrawals), 0, '.',',');
 
@@ -86,7 +86,7 @@ class UserPageController extends Controller
 
         //GET USER BALANCE
 
-        $balance = number_format($user->getWalletBalance(), 0,'.',',');
+        $balance = number_format($user->getDeductableProfit(), 0,'.',',');
 
         return view('user.withdrawals', compact(['siteSettings','transactions', 'balance', 'title']));
     }
@@ -96,21 +96,27 @@ class UserPageController extends Controller
         $title = env('APP_NAME');
         $user = $request->user();
         
-        $running_community_plans = UserPlan::where('user_id', $user->id)->where('plan_name', 'Community Bot')->where('pay_day','>',now())->get();
+        $community_plans = UserPlan::where('user_id', $user->id)->where('plan_name', 'Community Bot')->where('pay_day','>',now())->paginate(
+            $perPage = 5, $columns = ['*'], $pageName = 'community-plans'
+        );
 
-        $com_plan_count = count($running_community_plans);
+        $com_plan_count = count($community_plans);
 
-        $total_comm_profit = number_format($running_community_plans->sum('plan_profit'),0,'.',',');
+        $total_comm_profit = number_format($community_plans->sum('plan_profit'),0,'.',',');
 
-
-        $running_personal_plans = UserPlan::where('user_id', $user->id)->where('plan_name', 'Personal Bot Pro')->where('pay_day','>',now())->get();
-
-        $pers_plan_count = count($running_personal_plans);
-
-        $total_pers_profit = number_format($running_personal_plans->sum('plan_profit'),0,'.',',');
+        
 
 
-        return view('user.my-plans', compact(['running_community_plans','total_comm_profit','com_plan_count','running_personal_plans','pers_plan_count','total_pers_profit', 'title']));
+        $personal_plans = UserPlan::where('user_id', $user->id)->where('plan_name', 'Personal Bot Pro')->where('pay_day','>',now())->paginate(
+            $perPage = 5, $columns = ['*'], $pageName = 'community-plans'
+        );
+
+        $pers_plan_count = count($personal_plans);
+
+        $total_pers_profit = number_format($personal_plans->sum('plan_profit'),0,'.',',');
+
+
+        return view('user.my-plans', compact(['community_plans','total_comm_profit','com_plan_count','personal_plans','pers_plan_count','total_pers_profit', 'title']));
     }
 
     public function accthist (Request $request) {

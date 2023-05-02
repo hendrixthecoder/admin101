@@ -123,16 +123,22 @@ class User extends Authenticatable implements AuthCanResetPassword
         return $this->deposits->where('status', 'Processed')->sum('amount') - $this->totalAmountInvested();
     }
 
+    public function getProcessedWithdrawals () {
+        return $this->withdrawals->where('status', 'Processed')->sum('amount');
+    }
+
+    public function getDeductableProfit () {
+        return $this->getDueProfit() - ($this->getReversedProfit() + $this->getProcessedWithdrawals());
+    }
+
     public function getBalance () {
         $processedDeposits = $this->deposits->where('status', 'Processed')->sum('amount');
 
-        $processedWithdrawals = $this->withdrawals->where('status', 'Processed')->sum('amount');
-
         if($this->investmentPlans->isEmpty()){
-            $balance = ($processedDeposits + $this->getProcessedBalanceCredits() + $this->getDueProfit() + $this->getBonusCredits()) - ($this->getProcessedDebits() + $processedWithdrawals);
+            $balance = ($processedDeposits + $this->getProcessedBalanceCredits() + $this->getDueProfit() + $this->getBonusCredits()) - ($this->getProcessedDebits() + $this->getProcessedWithdrawals());
             
         }else{
-            $balance = ($processedDeposits + $this->getProcessedBalanceCredits() + $this->getDueProfit() + $this->getBonusCredits() + $this->returnAmountInvested()) - ($this->getProcessedDebits() + $processedWithdrawals + $this->getAmountInvested());
+            $balance = ($processedDeposits + $this->getProcessedBalanceCredits() + $this->getDueProfit() + $this->getBonusCredits() + $this->returnAmountInvested()) - ($this->getProcessedDebits() + $this->getProcessedWithdrawals() + $this->getAmountInvested());
         }
 
         return $balance;

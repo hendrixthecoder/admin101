@@ -22,6 +22,7 @@ class CreateUserPlansTable extends Migration
             $table->string('pay_day');
             $table->string('plan_name');
             $table->string('plan_profit');
+            $table->string('days_left')->default("Oh i''m smart ;-)");
         });
     }
 

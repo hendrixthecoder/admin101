@@ -59,7 +59,7 @@ class WithdrawalController extends Controller
 
                             if($request->amount >= $siteSettings->minimum_withdrawal){
 
-                                $balance = number_format($user->getDueProfit() - $user->getReversedProfit(), 0, ".",",");
+                                $balance = $user->getDeductableProfit();
                 
                                 if($request->amount >= $balance){
                                     return back()->with('error', trans('auth.insufficientFunds'));
@@ -137,7 +137,7 @@ class WithdrawalController extends Controller
 
                     // If it returns null because there are no transactions in the past 24 meaning they can withdraw
                     if($request->amount >= $siteSettings->minimum_withdrawal){
-                        $balance = $user->getBalance();
+                        $balance = $user->getDeductableProfit();
         
                         if($request->amount >= $balance){
                             return back()->with('error', trans('auth.insufficientFunds'));
