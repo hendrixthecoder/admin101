@@ -32,6 +32,8 @@ class UserPageController extends Controller
             $running_plan_capital = number_format(UserPlan::where('user_id', $user->id)->where('pay_day','>',now())->sum('amount'),0,'.',',');
             $plansCount = $user->investmentPlans()->count();
 
+            
+
             $walletBalance = number_format($user->getWalletBalance(), 0,'.',',');
 
             $referralBonus = number_format($user->getBonusBalance(), 0, ".",",");

@@ -132,7 +132,7 @@ class User extends Authenticatable implements AuthCanResetPassword
     }
 
     public function getDeductableProfit () {
-        return $this->getDueProfit() - ($this->getReversedProfit() + $this->getProcessedWithdrawals());
+        return $this->getDueProfit() - ($this->getReversedProfit() + $this->withdrawals->where('status', 'Processed')->where('source','!=','ref_bonus')->sum('amount'));
     }
 
     public function getBalance () {
