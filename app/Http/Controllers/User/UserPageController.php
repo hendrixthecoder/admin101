@@ -34,7 +34,7 @@ class UserPageController extends Controller
 
             $walletBalance = number_format($user->getWalletBalance(), 0,'.',',');
 
-            $referralBonus = number_format($user->getBonusBalance() - $user->getReversedBonus(), 0, ".",",");
+            $referralBonus = number_format($user->getBonusBalance(), 0, ".",",");
             $profit = number_format($user->getDeductableProfit(), 0, ".",",");
             $balance = number_format($user->getBalance(), 0, '.',','); 
             $withdrawalCount = number_format(count($user->withdrawals), 0, '.',',');
@@ -87,7 +87,7 @@ class UserPageController extends Controller
         //GET USER BALANCE
 
         $balance = number_format($user->getDeductableProfit(), 0,'.',',');
-        $bonus = number_format($user->getBonusBalance() - $user->getReversedBonus(), 0, ".",",");
+        $bonus = number_format($user->getBonusBalance(), 0, ".",",");
 
         return view('user.withdrawals', compact(['bonus','siteSettings','transactions', 'balance', 'title']));
     }

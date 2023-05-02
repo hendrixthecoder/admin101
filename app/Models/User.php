@@ -124,7 +124,7 @@ class User extends Authenticatable implements AuthCanResetPassword
     }
 
     public function getBonusBalance () {
-        return $this->getBonusCredits() - $this->withdrawals->where('source', 'Bonus')->sum('amount');
+        return $this->getBonusCredits() - ($this->withdrawals->where('source', 'Bonus')->sum('amount') + $this->getReversedBonus());
     }
 
     public function getProcessedWithdrawals () {

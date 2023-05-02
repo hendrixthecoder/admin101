@@ -43,6 +43,7 @@ class WithdrawalController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request->withdrawal_source);
         $user = $request->user();
         $siteSettings = Settings::find(1);
 
@@ -58,8 +59,14 @@ class WithdrawalController extends Controller
                         if((now()->diffInHours($lastWithdrawal->created_at) >= 24)) {
 
                             if($request->amount >= $siteSettings->minimum_withdrawal){
+                                
+                                if($request->withdrawal_source == 'profit'){
+                                    $balance = $user->getDeductableProfit();
 
-                                $balance = $user->getDeductableProfit();
+                                }
+
+                                $balance = $user->getBonusBalance();
+
                 
                                 if($request->amount >= $balance){
                                     return back()->with('error', trans('auth.insufficientFunds'));
@@ -137,7 +144,13 @@ class WithdrawalController extends Controller
 
                     // If it returns null because there are no transactions in the past 24 meaning they can withdraw
                     if($request->amount >= $siteSettings->minimum_withdrawal){
-                        $balance = $user->getDeductableProfit();
+                        
+                        if($request->withdrawal_source == 'profit'){
+                            $balance = $user->getDeductableProfit();
+
+                        }
+
+                        $balance = $user->getBonusBalance();
         
                         if($request->amount >= $balance){
                             return back()->with('error', trans('auth.insufficientFunds'));

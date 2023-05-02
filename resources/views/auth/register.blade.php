@@ -18,8 +18,7 @@
                         @endif
                     </div>
                 </div>
-            </div>
-            <div class="row">
+            </div>            <div class="row">
                 <div class="col-sm-6 mx-auto text-center">
                     <h1 class="mb-4"><a style="text-decoration: none;" href="{{ env('APP_URL') }}">{{ env('APP_NAME') }}</a></h1>
                 </div>
@@ -38,7 +37,7 @@
             </div>
             </div>
             @endif
-            <div class="row">0
+            <div class="row">
                 <div class="col">
                     <div class="card col-sm-8 mx-auto">
                         <div class="card-body">
