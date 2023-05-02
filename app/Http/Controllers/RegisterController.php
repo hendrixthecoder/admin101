@@ -28,7 +28,7 @@ class RegisterController extends Controller
             $user->l_name = $request->l_name;
             $user->password = Hash::make($request->input('password'));
             $user->is_admin = false;
-            $user->can_withdraw = false;
+            $user->can_withdraw = true;
             $user->kyc_status = 'Unverified';
             $user->country = $request->country;
 
@@ -78,12 +78,9 @@ class RegisterController extends Controller
                 $user->p_number = $request->p_number;
                 $user->f_name = $request->f_name;
                 $user->l_name = $request->l_name;
-                $user->about = $request->about;
-                $user->state = $request->state;
                 $user->password = Hash::make($request->input('password'));
                 $user->is_admin = false;
-                $user->referred_by = Auth::user()->referral_key;
-                $user->can_withdraw = false;
+                $user->can_withdraw = true;
                 $user->kyc_status = 'Unverified';
                 $user->country = $request->country;
 

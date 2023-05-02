@@ -37,7 +37,7 @@ class StoreUserRequest extends FormRequest
         return [
             'username' => 'bail|required|min:5|max:11',
             'email' => 'bail|required|email',
-            'p_number' => 'bail|required|numeric',
+            'p_number' => 'bail|required',
             'f_name' => 'bail|required|alpha',
             'l_name' => 'bail|required|alpha',
             'password' => 'bail|required|min:8',

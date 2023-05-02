@@ -19,21 +19,6 @@
                     </div>
                 </div>
             </div>
-
-            {{-- <div class="row">
-                <div class="card col-sm-8 mx-auto">
-                    @if (session()->has('errors'))
-                        <div class="alert alert-custom alert-indicator-top indicator-success mt-3" role="alert">
-                            <div class="alert-content">
-                                <span class="alert-title">Whoops!</span>
-                                <span class="alert-text">{{ session()->get('error') }}</span>
-                            </div>
-                        </div>
-                        @endif
-                    </div>
-                </div>
-            </div> --}}
-
             <div class="row">
                 <div class="col-sm-6 mx-auto text-center">
                     <h1 class="mb-4"><a style="text-decoration: none;" href="{{ env('APP_URL') }}">{{ env('APP_NAME') }}</a></h1>
@@ -53,8 +38,7 @@
             </div>
             </div>
             @endif
- 
-            <div class="row">
+            <div class="row">0
                 <div class="col">
                     <div class="card col-sm-8 mx-auto">
                         <div class="card-body">
@@ -125,8 +109,6 @@
                     </div>
                 </div>
             </div>
-
-            
         </div>
     </div>
 </div>
