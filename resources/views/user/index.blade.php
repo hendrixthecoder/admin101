@@ -28,12 +28,16 @@
             {{ session()->get('message') }}
         </div>
         @endif
-        <div class="row">
+        <div class="row flex-row ">
             <div class="col">
                 <a href="{{ route('deposits') }}" type="button" class="btn btn-primary mb-4 mt-2">
                     <i class="material-icons-two-tone">add</i>@lang('messages.newDeposits')
                 </a>
-                    
+            </div>
+            <div class="col">
+                <a href="{{ route('mywithdrawals') }}" type="button" class="btn btn-primary mb-4 mt-2">
+                    <i class="material-icons-two-tone">add</i>@lang('messages.newWithdrawals')
+                </a>
             </div>
         </div>
         <div class="row">

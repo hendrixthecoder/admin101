@@ -33,6 +33,7 @@ class UserPageController extends Controller
             $plansCount = $user->investmentPlans()->count();
 
             $walletBalance = number_format($user->deposits()->where('status', 'Processed')->sum('amount') - $user->returnAmountInvested(), 0,'.',',');
+            // dd($walletBalance);
             $referralBonus = number_format($user->getBonusCredits() - $user->getReversedBonus(), 0, ".",",");
             $profit = number_format($user->getDueProfit() - $user->getReversedProfit(), 0, ".",",");
             $balance = number_format($user->getBalance(), 0, '.',','); 
@@ -71,7 +72,7 @@ class UserPageController extends Controller
         $deposits = $user->deposits()->paginate(2);
         
         //GET USER BALANCE
-        $balance = number_format($user->getBalance(), 0, '.',',');
+        $balance = number_format($user->deposits()->where('status', 'Processed')->sum('amount') - $user->returnAmountInvested(), 0,'.',',');
 
         return view('user.deposits', compact(['balance', 'deposits', 'title']));
     }
