@@ -93,7 +93,7 @@
                                             Duration:
                                         </span>
                                     </span>
-                                    <span class="widget-list-item-transaction-amount-positive">{{ $plan->duration }}</span>
+                                    <span class="widget-list-item-transaction-amount-positive">{{ $plan->duration }} Days</span>
                                 </li>                                    
                                 <li class="widget-list-item widget-list-item-blue">
                                     <span class="widget-list-item-description">
