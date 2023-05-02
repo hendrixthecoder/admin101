@@ -69,6 +69,13 @@
                                             </select>
                                         </div>
                                         <div class="col-12">
+                                            <label for="inputPaymentType" class="form-label">Withdrawal Source</label>
+                                            <select id="inputState" name="withdrawal_source" class="form-select">
+                                                <option value="profits">Profit</option>
+                                                <option value="ref_bonus">Referral Bonus</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
                                             <input type="submit" class="btn btn-primary" value="@lang('messages.submit')">
                                         </div>
                                     </form>

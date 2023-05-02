@@ -98,6 +98,14 @@
                                 <li class="widget-list-item widget-list-item-blue">
                                     <span class="widget-list-item-description">
                                         <span class="widget-list-item-description-title">
+                                            Percentage Earnings:
+                                        </span>
+                                    </span>
+                                    <span class="widget-list-item-transaction-amount-positive">{{ $plan->daily_earnings }}%</span>
+                                </li>                                    
+                                <li class="widget-list-item widget-list-item-blue">
+                                    <span class="widget-list-item-description">
+                                        <span class="widget-list-item-description-title">
                                             Amount($):
                                         </span>
                                     </span>
