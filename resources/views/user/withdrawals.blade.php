@@ -73,8 +73,8 @@
                                         <div class="col-12">
                                             <label for="inputPaymentType" class="form-label">Withdrawal Source</label>
                                             <select required id="inputState" name="withdrawal_source" class="form-select">
-                                                <option value="profits">Profit - (${{ $balance }})</option>
-                                                <option value="ref_bonus">Referral Bonus - (${{ $bonus }})</option>
+                                                <option value="Profit">Profit - (${{ $balance }})</option>
+                                                <option value="Bonus">Referral Bonus - (${{ $bonus }})</option>
                                             </select>
                                         </div>
                                         <div class="col-12">
@@ -114,6 +114,7 @@
                                         <tr>
                                             <th scope="col">ID</th>
                                             <th scope="col">Amount</th>
+                                            <th scope="col">Source</th>
                                             <th scope="col">Payment Mode</th>
                                             <th scope="col">Payment Details</th>
                                             <th scope="col">Date Created</th>
@@ -126,6 +127,7 @@
                                             <tr>
                                                 <th scope="row">{{ $transaction->id }}</th>
                                                 <td>${{ $transaction->amount }}</td>
+                                                <td>{{ $transaction->source }}</td>
                                                 <td>{{ $transaction->receive_method }}</td>
                                                 <td>{{ $transaction->receive_details }}</td>
                                                 <td>{{ $transaction->created_at }}</td>
