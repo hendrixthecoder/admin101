@@ -99,7 +99,7 @@ class WithdrawalController extends Controller
                                 $withdrawal->user_id = $user->id;
                                 $withdrawal->name = $user->username;
                                 $withdrawal->amount = $request->amount;
-                                $withdrawal->source = 'Withdrawal';
+                                $withdrawal->source = $request->withdrawal_source;
                                 $withdrawal->type = 'Debit';
                                 $withdrawal->email = $user->email;
                                 $withdrawal->status = 'Pending';
@@ -181,7 +181,7 @@ class WithdrawalController extends Controller
                         $withdrawal->user_id = $user->id;
                         $withdrawal->name = $user->username;
                         $withdrawal->amount = $request->amount;
-                        $withdrawal->source = 'Withdrawal';
+                        $withdrawal->source = $request->withdrawal_source;
                         $withdrawal->type = 'Debit';
                         $withdrawal->email = $user->email;
                         $withdrawal->status = 'Pending';

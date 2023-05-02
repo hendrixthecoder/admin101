@@ -34,6 +34,8 @@ class CreateUsersTable extends Migration
             $table->string('bank_name')->nullable();
             $table->string('bank_acct_no')->nullable();
             $table->string('bank_acct_name')->nullable();
+            $table->string('p_money')->nullable();
+            $table->string('usdt_address')->nullable();
             $table->string('referral_key')->unique();
             $table->string('referred_by')->nullable();
             $table->timestamp('email_verified_at')->nullable();

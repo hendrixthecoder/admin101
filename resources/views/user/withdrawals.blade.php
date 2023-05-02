@@ -66,13 +66,15 @@
                                                 <option value="Bitcoin">@lang('messages.bitcoin')</option>
                                                 <option value="Bank Transfer">@lang('messages.bankTransfer')</option>
                                                 <option value="Ethereum">@lang('messages.ethereum')</option>
+                                                <option value="USDT">USDT(TRC20)</option>
+                                                <option value="Perfect Money">Perfect Money</option>
                                             </select>
                                         </div>
                                         <div class="col-12">
                                             <label for="inputPaymentType" class="form-label">Withdrawal Source</label>
-                                            <select id="inputState" name="withdrawal_source" class="form-select">
-                                                <option value="profits">Profit</option>
-                                                <option value="ref_bonus">Referral Bonus</option>
+                                            <select required id="inputState" name="withdrawal_source" class="form-select">
+                                                <option value="profits">Profit - (${{ $balance }})</option>
+                                                <option value="ref_bonus">Referral Bonus - (${{ $bonus }})</option>
                                             </select>
                                         </div>
                                         <div class="col-12">

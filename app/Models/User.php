@@ -123,6 +123,10 @@ class User extends Authenticatable implements AuthCanResetPassword
         return $this->deposits->where('status', 'Processed')->sum('amount') - $this->totalAmountInvested();
     }
 
+    public function getBonusBalance () {
+        return $this->getBonusCredits() - $this->withdrawals->where('source', 'Bonus')->sum('amount');
+    }
+
     public function getProcessedWithdrawals () {
         return $this->withdrawals->where('status', 'Processed')->sum('amount');
     }
