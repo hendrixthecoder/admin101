@@ -1,7 +1,9 @@
 <div class="app align-content-stretch d-flex flex-wrap">
     <div class="app-sidebar">
         <div class="logo" style="">
-            <img src="{{ env('APP_URL') }}cloud/uploads/pfp/empty.png" alt="" style="object-fit: contain; max-width:50px; max-height:50px" >
+            <div class="" style="border-radius:50%">
+                <img src="{{ env('APP_URL') }}cloud/uploads/pfp/empty.png" alt="" style="object-fit: contain; max-width:50px; max-height:50px" >
+            </div>
 
             {{-- <a href="{{ route('home') }}" class="logo-icon"><span class="logo-text">Admin101</span></a> --}}
             <div class="sidebar-user-switcher user-activity-online">
