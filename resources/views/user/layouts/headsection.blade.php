@@ -1,7 +1,7 @@
 <div class="app align-content-stretch d-flex flex-wrap">
     <div class="app-sidebar">
         <div class="logo" style="">
-            <div class="" style="border-radius:50%; height:50px; width:50px">
+            <div class="" style="border-radius:50%; height:50px; width:50px; overflow:hidden">
                 <img src="{{ env('APP_URL') }}cloud/uploads/pfp/empty.png" alt="" style="max-width:100%; max-height:100%; box-sizing:border-box" >
             </div>
 
