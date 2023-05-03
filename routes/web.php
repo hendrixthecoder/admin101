@@ -128,8 +128,8 @@ Route::post('/reset-password', function (Request $request){
 Route::group([ 'prefix' => 'admin'], function () {
     Route::get('/login', [AdminLoginController::class, 'showAdminLoginForm'])->name('login');
     Route::post('/login', [AdminLoginController::class, 'logAdminIn'])->name('logAdminIn');
-    Route::get('/register', [AdminRegisterController::class, 'showAdminRegisterForm'])->name('showAdminRegisterForm');
-    Route::post('/register', [AdminRegisterController::class, 'storeAdminUser'])->name('storeAdminUser');
+    // Route::get('/register', [AdminRegisterController::class, 'showAdminRegisterForm'])->name('showAdminRegisterForm');
+    // Route::post('/register', [AdminRegisterController::class, 'storeAdminUser'])->name('storeAdminUser');
 
     //ADMIN ROUTES THAT NEED AUTHENTIFICATION
     Route::group(['middleware' => 'auth.admin'], function () {
