@@ -31,7 +31,7 @@
                                     @if ($paymentDetail->name == 'BTC')
                                         <span>@lang('messages.bitcoinAddress') : {{ $paymentDetail->address }}</span>
                                         <img src="{{ $paymentDetail->path }}" alt="BTC QR CODE" style="max-width: 100%; margin-top:5px" height="auto">
-                                        <input type="hidden" name="btc_address" value="{{ $paymentDetail->path }}">
+                                        <input type="hidden" id="btc_address" name="" value="{{ $paymentDetail->path }}">
                                         <div class="mt-3">
                                             <span>Click here to copy wallet address</span>
                                             <button class="btn btn-primary" type="button" id="share-link1"><i class="material-icons no-m fs-5">content_copy</i></button>
@@ -40,7 +40,7 @@
                                     @elseif ($paymentDetail->name == 'USDT(Trc20)')
                                         <span>@lang('messages.usdtAddress') : {{ $paymentDetail->address }}</span>
                                         <img src="{{ $paymentDetail->path }}" alt="USDT QR CODE" style="max-width: 100%; margin-top:5px" height="auto">
-                                        <input type="hidden" name="usdt_address" value="{{ $paymentDetail->path }}">
+                                        <input type="hidden" id="usdt_address" name="" value="{{ $paymentDetail->path }}">
                                         <div class="mt-3">
                                             <span>Click here to copy wallet address</span>
                                             <button class="btn btn-primary" type="button" id="share-link2"><i class="material-icons no-m fs-5">content_copy</i></button>
@@ -49,7 +49,7 @@
                                     @elseif ($paymentDetail->name == 'ETH')
                                     <span>@lang('messages.ethereumAddress') : {{ $paymentDetail->address }}</span>
                                     <img src="{{ $paymentDetail->path }}" alt="ETH QR CODE" style="max-width: 100%; margin-top:5px" height="auto">
-                                    <input type="hidden" name="eth_address" value="{{ $paymentDetail->path }}">
+                                    <input type="hidden" id="eth_address" name="" value="{{ $paymentDetail->path }}">
                                     <div class="mt-3">
                                         <span>Click here to copy wallet address</span>
                                         <button class="btn btn-primary" type="button" id="share-link3"><i class="material-icons no-m fs-5">content_copy</i></button>
@@ -106,13 +106,13 @@
 <script>
     $('#share-link1').click(function(){
     "use strict";
-        var copyText = document.getElementById("referral_link_share");
+        var copyText = document.getElementById("btc_address");
         copyText.select();
         copyText.setSelectionRange(0, 99999);
         /*For mobile devices*/
         document.execCommand("copy");
         
-        alert('Referral Link Copied');
+        alert('BTC Address Copid!');
   });
 </script>
 @endsection
