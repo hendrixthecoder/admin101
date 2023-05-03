@@ -28,9 +28,11 @@
             <form action="{{ route('logUserIn') }}" id="logUserIn" class="auth-credentials m-b-xxl" method="post">
                 @csrf
                 <label for="signInEmail" class="form-label">Email address</label>
-                <input name="email" type="email" class="form-control m-b-md" id="signInEmail" aria-describedby="signInEmail" placeholder="example@marathn.com">
+                <input name="email" required type="email" class="form-control m-b-md" id="signInEmail" aria-describedby="signInEmail" placeholder="example@marathn.com">
+
                 <label for="signInPassword" class="form-label">Password</label>
-                <input name="password" type="password" class="form-control" id="signInPassword" aria-describedby="signInPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">            
+                <input required name="password" type="password" class="form-control" id="signInPassword" aria-describedby="signInPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">            
+                <
                 <a href="{{ route('home') }}" onclick="event.preventDefault();document.getElementById('logUserIn').submit();" class="btn btn-primary auth-submit mt-4">Sign In</a>
                 {{-- <form id="logUserIn" action="{{ route('logUserIn') }}" method="post">
                 @csrf
