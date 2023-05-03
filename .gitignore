@@ -1,6 +1,5 @@
 /node_modules
-/public/hot
-/public/storage
+/public
 /storage/*.key
 /vendor
 .env
@@ -14,3 +13,4 @@ yarn-error.log
 /.idea
 /.vscode
 /cloud
+public/css/main.min.css
