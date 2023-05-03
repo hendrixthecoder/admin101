@@ -31,7 +31,8 @@
                                     @if ($paymentDetail->name == 'BTC')
                                         <span>@lang('messages.bitcoinAddress') : {{ $paymentDetail->address }}</span>
                                         <img src="{{ $paymentDetail->path }}" alt="BTC QR CODE" style="max-width: 100%; margin-top:5px" height="auto">
-                                        <input type="hidden" id="btc_address" name="" value="{{ $paymentDetail->path }}">
+
+                                        <input style="display:none;" id="btc_address_copy" name="" value="{{ $paymentDetail->address }}">
                                         <div class="mt-3">
                                             <span>Click here to copy wallet address</span>
                                             <button class="btn btn-primary" type="button" id="share-link1"><i class="material-icons no-m fs-5">content_copy</i></button>
@@ -40,7 +41,8 @@
                                     @elseif ($paymentDetail->name == 'USDT(Trc20)')
                                         <span>@lang('messages.usdtAddress') : {{ $paymentDetail->address }}</span>
                                         <img src="{{ $paymentDetail->path }}" alt="USDT QR CODE" style="max-width: 100%; margin-top:5px" height="auto">
-                                        <input type="hidden" id="usdt_address" name="" value="{{ $paymentDetail->path }}">
+
+                                        <input style="display: none" id="usdt_address" name="" value="{{ $paymentDetail->address }}">
                                         <div class="mt-3">
                                             <span>Click here to copy wallet address</span>
                                             <button class="btn btn-primary" type="button" id="share-link2"><i class="material-icons no-m fs-5">content_copy</i></button>
@@ -49,7 +51,8 @@
                                     @elseif ($paymentDetail->name == 'ETH')
                                     <span>@lang('messages.ethereumAddress') : {{ $paymentDetail->address }}</span>
                                     <img src="{{ $paymentDetail->path }}" alt="ETH QR CODE" style="max-width: 100%; margin-top:5px" height="auto">
-                                    <input type="hidden" id="eth_address" name="" value="{{ $paymentDetail->path }}">
+
+                                    <input style="display: none" id="eth_address" name="" value="{{ $paymentDetail->address }}">
                                     <div class="mt-3">
                                         <span>Click here to copy wallet address</span>
                                         <button class="btn btn-primary" type="button" id="share-link3"><i class="material-icons no-m fs-5">content_copy</i></button>
@@ -57,6 +60,11 @@
                                     
                                     @else
                                         <span>@lang('messages.perfectMoney') : {{ $paymentDetail->address }}</span>
+                                        <div class="mt-3">
+                                            <span>Click here to copy Perfect Money Code</span>
+                                            <input style="display: none" id="p_money" name="" value="{{ $paymentDetail->address }}">
+                                            <button class="btn btn-primary" type="button" id="share-link4"><i class="material-icons no-m fs-5">content_copy</i></button>
+                                        </div>
                                     @endif
                                 </div>
                                 <div class="col-md-6">
@@ -104,15 +112,46 @@
     </div>
 </div>
 <script>
-    $('#share-link1').click(function(){
-    "use strict";
-        var copyText = document.getElementById("btc_address");
-        copyText.select();
-        copyText.setSelectionRange(0, 99999);
-        /*For mobile devices*/
-        document.execCommand("copy");
+    $(document).ready(function () {
+        $('#share-link1').click(function(){
+            var copyText = document.getElementById('btc_address_copy');
+            copyText.select();
+            copyText.setSelectionRange(0,99999);
+            navigator.clipboard.writeText(copyText.value);
+
         
-        alert('BTC Address Copid!');
-  });
+            alert('Copid BTC Address: '+ copyText.value);
+        });  
+
+        $('#share-link2').click(function(){
+            var copyText = document.getElementById('usdt_address');
+            copyText.select();
+            copyText.setSelectionRange(0,99999);
+            navigator.clipboard.writeText(copyText.value);
+
+        
+            alert('Copied USDT Address: '+ copyText.value);
+        });   
+
+        $('#share-link3').click(function(){
+            var copyText = document.getElementById('eth_address');
+            copyText.select();
+            copyText.setSelectionRange(0,99999);
+            navigator.clipboard.writeText(copyText.value);
+
+        
+            alert('Copied ETH Address: '+ copyText.value);
+        });   
+
+        $('#share-link4').click(function(){
+            var copyText = document.getElementById('usdt_address');
+            copyText.select();
+            copyText.setSelectionRange(0,99999);
+            navigator.clipboard.writeText(copyText.value);
+
+        
+            alert('Copied Perfect Money Code: '+ copyText.value);
+        });   
+    });
 </script>
 @endsection
