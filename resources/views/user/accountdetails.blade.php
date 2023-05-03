@@ -58,7 +58,7 @@
             <div class="accordion" id="accordionIconsExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="icons-headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#icons-collapseOne" aria-expanded="true" aria-controls="icons-collapseOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#icons-collapseOne" aria-expanded="false" aria-controls="icons-collapseOne">
                             <i class="material-icons-two-tone">lightbulb</i>@lang('messages.bankTransfer')
                         </button>
                     </h2>
@@ -122,6 +122,50 @@
                                 <div class="col-12">
                                     <label for="inputAddress" class="form-label">@lang('messages.ethereumAddress')</label>
                                     <input type="text" name="eth_address" class="form-control" id="inputAddress" placeholder="" value="{{ $user->ethereum_address }}">
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">@lang('messages.submit')</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="icons-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#icons-collapseFour" aria-expanded="false" aria-controls="icons-collapseFour">
+                            <i class="material-icons-two-tone">extension</i>@lang('messages.usdtAddress')
+                        </button>
+                    </h2>
+                    <div id="icons-collapseFour" class="accordion-collapse collapse" aria-labelledby="icons-headingThree" data-bs-parent="#accordionIconsExample">
+                        <div class="accordion-body">
+                            <form class="row g-3" action="{{ route('user.update', ['user' => $user->id]) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <div class="col-12">
+                                    <label for="inputAddress" class="form-label">@lang('messages.usdtAddress')</label>
+                                    <input type="text" name="usdt_address" class="form-control" id="inputAddress" placeholder="" value="{{ $user->usdt_address }}">
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">@lang('messages.submit')</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="icons-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#icons-collapseFive" aria-expanded="false" aria-controls="icons-collapseFive">
+                            <i class="material-icons-two-tone">extension</i>@lang('messages.perfectMoney')
+                        </button>
+                    </h2>
+                    <div id="icons-collapseFive" class="accordion-collapse collapse" aria-labelledby="icons-headingThree" data-bs-parent="#accordionIconsExample">
+                        <div class="accordion-body">
+                            <form class="row g-3" action="{{ route('user.update', ['user' => $user->id]) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <div class="col-12">
+                                    <label for="inputAddress" class="form-label">@lang('messages.perfectMoney')</label>
+                                    <input type="text" name="p_money" value="{{ $user->p_money }}" class="form-control" id="inputAddress" placeholder="" value="{{ $user->ethereum_address }}">
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary">@lang('messages.submit')</button>

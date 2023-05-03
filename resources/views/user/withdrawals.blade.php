@@ -149,7 +149,7 @@
             </div>
             @endif
             <div class="row">
-                <div class="col">
+                <div class="col-xl-6">
                     <div class="card mt-5">
                         <div class="card-header">
                           @lang('messages.profits')
@@ -157,6 +157,19 @@
                         <div class="card-body">
                           <blockquote class="blockquote mb-0">
                             <p>${{ $balance }}</p>
+                            <footer class="blockquote-footer">@lang('messages.greatDay')</cite></footer>
+                          </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="card mt-5">
+                        <div class="card-header">
+                          @lang('messages.referralBonus')
+                        </div>
+                        <div class="card-body">
+                          <blockquote class="blockquote mb-0">
+                            <p>${{ $bonus }}</p>
                             <footer class="blockquote-footer">@lang('messages.greatDay')</cite></footer>
                           </blockquote>
                         </div>

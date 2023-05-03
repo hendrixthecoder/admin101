@@ -81,6 +81,7 @@ class UsersController extends Controller
     {
         //USER MAKING THE REQUEST TO UPDATE THEIR PROFILE
 
+
         $user = $request->user();
 
         //USER USERNAME
@@ -150,6 +151,18 @@ class UsersController extends Controller
             //DO NOTHING
         }else{
             $user->email = $request->email;
+        }
+
+        if(empty($request->usdt_address)){
+            //DO NOTHING
+        }else{
+            $user->usdt_address = $request->usdt_address;
+        }
+
+        if(empty($request->p_money)){
+            //DO NOTHING
+        }else{
+            $user->p_money = $request->p_money;
         }
 
         $user->can_withdraw = $user->can_withdraw;
