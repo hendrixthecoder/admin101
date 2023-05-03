@@ -29,7 +29,7 @@
                             <div class="accordion-body">
                                 <div class="col-md-6">
                                     @if ($paymentDetail->name == 'BTC')
-                                        <span>@lang('messages.bitcoinAddress') : {{ $paymentDetail->address }}</span>
+                                        <span style="word-wrap: break-word" >@lang('messages.bitcoinAddress') : {{ $paymentDetail->address }}</span>
                                         <img src="{{ $paymentDetail->path }}" alt="BTC QR CODE" style="max-width: 100%; margin-top:5px" height="auto">
 
                                         <input style="display:none;" id="btc_address_copy" name="" value="{{ $paymentDetail->address }}">
