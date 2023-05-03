@@ -18,6 +18,7 @@ class CreatePaymentDetailsTable extends Migration
             $table->string('address');
             $table->string('status');
             $table->string('name');
+            $table->string('path')->nullable();
             $table->string('identifier');
             $table->timestamps();
         });
