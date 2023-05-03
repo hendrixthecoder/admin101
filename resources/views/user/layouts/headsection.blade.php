@@ -1,8 +1,8 @@
 <div class="app align-content-stretch d-flex flex-wrap">
     <div class="app-sidebar">
         <div class="logo" style="">
-            <div class="" style="border-radius:50%">
-                <img src="{{ env('APP_URL') }}cloud/uploads/pfp/empty.png" alt="" style="object-fit: contain; max-width:50px; max-height:50px" >
+            <div class="" style="border-radius:50%; height:50px; width:50px">
+                <img src="{{ env('APP_URL') }}cloud/uploads/pfp/empty.png" alt="" style="max-width:100%; max-height:100%; box-sizing:border-box" >
             </div>
 
             {{-- <a href="{{ route('home') }}" class="logo-icon"><span class="logo-text">Admin101</span></a> --}}
