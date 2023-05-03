@@ -30,15 +30,15 @@
                                 <div class="col-md-6">
                                     @if ($paymentDetail->name == 'BTC')
                                         <span>@lang('messages.bitcoinAddress') : {{ $paymentDetail->address }}</span>
-                                        <img src="{{ $paymentDetail->path }}" alt="BTC QR CODE">
+                                        <img src="{{ $paymentDetail->path }}" alt="BTC QR CODE" style="max-width: 80%" height="auto">
 
                                     @elseif ($paymentDetail->name == 'USDT(Trc20)')
                                         <span>@lang('messages.usdtAddress') : {{ $paymentDetail->address }}</span>
-                                        <img src="{{ $paymentDetail->path }}" alt="USDT QR CODE">
+                                        <img src="{{ $paymentDetail->path }}" alt="USDT QR CODE" style="max-width: 80%" height="auto">
 
                                     @elseif ($paymentDetail->name == 'ETH')
                                     <span>@lang('messages.ethereumAddress') : {{ $paymentDetail->address }}</span>
-                                    <img src="{{ $paymentDetail->path }}" alt="ETH QR CODE">
+                                    <img src="{{ $paymentDetail->path }}" alt="ETH QR CODE" style="max-width: 80%" height="auto">
                                     
                                     @else
                                         <span>@lang('messages.perfectMoney') : {{ $paymentDetail->address }}</span>
