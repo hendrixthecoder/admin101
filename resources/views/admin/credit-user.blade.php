@@ -34,7 +34,7 @@
                                 <div class="col-md-4">
                                     <label for="inputState" class="form-label">Where to credit</label>
                                     <select id="inputState" name="whereToCredit" class="form-select">
-                                        <option selected value="balance">Balance</option>
+                                        {{-- <option selected value="balance">Balance</option> --}}
                                         <option value="profit">Profit</option>
                                         <option value="bonus">Bonus</option>
                                     </select>
