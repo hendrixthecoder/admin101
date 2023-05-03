@@ -30,8 +30,9 @@
                                 <div class="col-md-6">
                                     @if ($paymentDetail->name == 'BTC')
                                         <span>@lang('messages.bitcoinAddress') : {{ $paymentDetail->address }}</span>
-                                        <button class="btn btn-primary" type="button" id="share-link1"><i class="material-icons no-m fs-5">content_copy</i></button>
                                         <img src="{{ $paymentDetail->path }}" alt="BTC QR CODE" style="max-width: 80%; margin-top:5px" height="auto">
+                                        <span>Click here to copy wallet address</span>
+                                        <button class="btn btn-primary" type="button" id="share-link1"><i class="material-icons no-m fs-5">content_copy</i></button>
 
                                     @elseif ($paymentDetail->name == 'USDT(Trc20)')
                                         <span>@lang('messages.usdtAddress') : {{ $paymentDetail->address }}</span>
