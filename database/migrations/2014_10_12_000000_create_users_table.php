@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('status');
             $table->string('kyc_status');
             $table->string('country');
+            $table->string('pfp_path')->default('empty');
             $table->string('id_path')->nullable();
             $table->string('photo_path')->nullable();
             $table->string('locale')->default('en');

@@ -120,7 +120,7 @@
             navigator.clipboard.writeText(copyText.value);
 
         
-            alert('Copid BTC Address: '+ copyText.value);
+            alert('Copied BTC Address: '+ copyText.value);
         });  
 
         $('#share-link2').click(function(){
@@ -149,7 +149,6 @@
             copyText.setSelectionRange(0,99999);
             navigator.clipboard.writeText(copyText.value);
 
-        
             alert('Copied Perfect Money Code: '+ copyText.value);
         });   
     });

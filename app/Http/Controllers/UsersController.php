@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\UpdateUser;
 use App\Models\InvestmentPlans;
+use App\Http\Requests\UpdateUser;
+use App\Http\Controllers\Controller;
 
 class UsersController extends Controller
 {
@@ -79,6 +80,10 @@ class UsersController extends Controller
      */
     public function update(User $user, Request $request)
     {
+        $validated_image = $request->validate([
+            'pfp' => 'mimes:png,jpg,jpeg|max:5120',
+        ]);
+
         //USER MAKING THE REQUEST TO UPDATE THEIR PROFILE
 
 
@@ -163,6 +168,18 @@ class UsersController extends Controller
             //DO NOTHING
         }else{
             $user->p_money = $request->p_money;
+        }
+
+
+        if($validated_image){
+            
+            $upload_dir = "../cloud/uploads/pfp";
+            $filename = Carbon::now()->timestamp.'.'.$request->file('proof')->getClientOriginalExtension();
+            
+            $$validated_image->move($upload_dir, $filename);
+            
+            $user->pfp = $filename;
+
         }
 
         $user->can_withdraw = $user->can_withdraw;

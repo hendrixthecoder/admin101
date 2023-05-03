@@ -66,7 +66,7 @@
                             <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
                                 <div class="card">
                                     <div class="card-body">
-                                        <form action="{{ route('user.update', ['user' => Auth::user()]) }}" id="bio_data_form" method="post">
+                                        <form action="{{ route('user.update', ['user' => Auth::user()]) }}" id="bio_data_form" method="post" enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
                                             <div class="row">
@@ -99,6 +99,14 @@
                                                 </div>
                                             </div>
                                             <div class="row m-t-lg">
+                                                <div class="col-md-6">
+                                                    <label for="settingsInputUserName" class="form-label">Profile Picture</label>
+                                                    <div class="input-group">
+                                                        <input name="pfp" type="file" class="form-control" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row m-t-lg">
                                                 <div class="col">
                                                     <a href="#" class="btn btn-primary m-t-sm" 
                                                         onclick="event.preventDefault();
@@ -124,20 +132,20 @@
                                         <div class="row m-t-xxl">
                                             <div class="col-md-6">
                                                 <label for="settingsCurrentPassword" class="form-label">@lang('messages.currentPass')</label>
-                                                <input type="password" name="oldPassword" class="form-control" aria-describedby="settingsCurrentPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+                                                <input required type="password" name="oldPassword" class="form-control" aria-describedby="settingsCurrentPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
                                                 <div id="settingsCurrentPassword" class="form-text">@lang('messages.neverSharePass')</div>
                                             </div>
                                         </div>
                                         <div class="row m-t-xxl">
                                             <div class="col-md-6">
                                                 <label for="settingsNewPassword" class="form-label">@lang('messages.newPass')</label>
-                                                <input type="password" name="password" class="form-control" aria-describedby="settingsNewPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+                                                <input required type="password" name="password" class="form-control" aria-describedby="settingsNewPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
                                             </div>
                                         </div>
                                         <div class="row m-t-xxl">
                                             <div class="col-md-6">
                                                 <label for="settingsConfirmPassword" class="form-label">@lang('messages.confirmPass')</label>
-                                                <input type="password" name="password_confirmation" class="form-control" aria-describedby="settingsConfirmPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+                                                <input type="password" required name="password_confirmation" class="form-control" aria-describedby="settingsConfirmPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
                                                 <input type="hidden" name="g12" value="{{ Auth::user()->id }}">
                                             </div>
                                         </div>

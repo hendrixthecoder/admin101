@@ -163,6 +163,7 @@ return [
         'p_number' => 'Phone Number',
         'l_name' => 'Last Name',
         'f_name' => 'First Name',
+        'pfp' => 'Profile Picture'
     ],
 
 ];
