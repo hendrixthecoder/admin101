@@ -31,16 +31,29 @@
                                     @if ($paymentDetail->name == 'BTC')
                                         <span>@lang('messages.bitcoinAddress') : {{ $paymentDetail->address }}</span>
                                         <img src="{{ $paymentDetail->path }}" alt="BTC QR CODE" style="max-width: 100%; margin-top:5px" height="auto">
-                                        <span>Click here to copy wallet address</span>
-                                        <button class="btn btn-primary" type="button" id="share-link1"><i class="material-icons no-m fs-5">content_copy</i></button>
+                                        <input type="hidden" name="btc_address" value="{{ $paymentDetail->path }}">
+                                        <div class="mt-3">
+                                            <span>Click here to copy wallet address</span>
+                                            <button class="btn btn-primary" type="button" id="share-link1"><i class="material-icons no-m fs-5">content_copy</i></button>
+                                        </div>
 
                                     @elseif ($paymentDetail->name == 'USDT(Trc20)')
                                         <span>@lang('messages.usdtAddress') : {{ $paymentDetail->address }}</span>
-                                        <img src="{{ $paymentDetail->path }}" alt="USDT QR CODE" style="max-width: 80%; margin-top:5px" height="auto">
+                                        <img src="{{ $paymentDetail->path }}" alt="USDT QR CODE" style="max-width: 100%; margin-top:5px" height="auto">
+                                        <input type="hidden" name="usdt_address" value="{{ $paymentDetail->path }}">
+                                        <div class="mt-3">
+                                            <span>Click here to copy wallet address</span>
+                                            <button class="btn btn-primary" type="button" id="share-link2"><i class="material-icons no-m fs-5">content_copy</i></button>
+                                        </div>
 
                                     @elseif ($paymentDetail->name == 'ETH')
                                     <span>@lang('messages.ethereumAddress') : {{ $paymentDetail->address }}</span>
-                                    <img src="{{ $paymentDetail->path }}" alt="ETH QR CODE" style="max-width: 80%; margin-top:5px" height="auto">
+                                    <img src="{{ $paymentDetail->path }}" alt="ETH QR CODE" style="max-width: 100%; margin-top:5px" height="auto">
+                                    <input type="hidden" name="eth_address" value="{{ $paymentDetail->path }}">
+                                    <div class="mt-3">
+                                        <span>Click here to copy wallet address</span>
+                                        <button class="btn btn-primary" type="button" id="share-link3"><i class="material-icons no-m fs-5">content_copy</i></button>
+                                    </div>
                                     
                                     @else
                                         <span>@lang('messages.perfectMoney') : {{ $paymentDetail->address }}</span>
