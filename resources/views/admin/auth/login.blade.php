@@ -8,7 +8,7 @@
         <div class="logo">
             <a href="{{ env('ADMIN_APP_URL') }}/dashboard">{{ env('APP_NAME') }}</a>
         </div>
-        <p class="auth-description">Please sign-in to your account and continue to the dashboard.<br>Don't have an account? <a href="{{ route('showAdminRegisterForm') }}">Sign Up</a></p>
+        <p class="auth-description">Please sign-in to your account and continue to the dashboard.<br></p>
             @if(count($errors) > 0 )
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     {{-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
