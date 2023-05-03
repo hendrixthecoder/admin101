@@ -144,7 +144,7 @@
         });   
 
         $('#share-link4').click(function(){
-            var copyText = document.getElementById('usdt_address');
+            var copyText = document.getElementById('p_money');
             copyText.select();
             copyText.setSelectionRange(0,99999);
             navigator.clipboard.writeText(copyText.value);
