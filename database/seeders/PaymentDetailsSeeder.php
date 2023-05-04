@@ -18,14 +18,16 @@ class PaymentDetailsSeeder extends Seeder
             'address' => 'ebwlerqeyrfgoqeuyrv',
             'status' => 1,
             'name' => 'BTC',
-            'identifier' => 'btc'
+            'identifier' => 'btc',
+            'path' => 'https://marathn.co/system/wallet/btc_address.jpeg'
         ]);
 
         $paymentDetail2 = PaymentDetails::create([
             'address' => 'qerqerqerqverq343gf3fre',
             'status' => 1,
             'name' => 'USDT(Trc20)',
-            'identifier' => 'usdt'
+            'identifier' => 'usdt',
+            'path' => 'https://marathn.co/system/wallet/usdt_address.jpeg'
         ]);
 
         $paymentDetail3 = PaymentDetails::create([
@@ -33,6 +35,7 @@ class PaymentDetailsSeeder extends Seeder
             'status' => 1,
             'name' => 'ETH',
             'identifier' => 'eth',
+            'path'=> 'https://marathn.co/system/wallet/eth_address.jpeg'
         ]);
 
         $paymentDetail4 = PaymentDetails::create([
