@@ -21,7 +21,7 @@
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="return-tab" data-bs-toggle="tab" data-bs-target="#return" type="button" role="tab" aria-controls="return" aria-selected="false">Capital Return</button>
-                            </li>
+                            </li> 
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="return-tab" data-bs-toggle="tab" data-bs-target="#reversal" type="button" role="tab" aria-controls="reversal" aria-selected="false">Reversal</button>
                             </li>

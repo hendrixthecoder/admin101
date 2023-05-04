@@ -94,7 +94,7 @@
                                             <tbody>
                                             @foreach ($personal_plans as $personal_plan) 
                                                 <tr>
-                                                    <th scope="row">{{ $eachRoi->id }}</th>
+                                                    <th scope="row">{{ $personal_plan->id }}</th>
                                                     <td>${{ $personal_plan->amount }}</td>
                                                     <td>{{ $personal_plan->source }}</td>
                                                     <td>{{ $personal_plan->created_at }}</td>
