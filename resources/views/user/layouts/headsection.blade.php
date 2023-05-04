@@ -1,11 +1,11 @@
 <div class="app align-content-stretch d-flex flex-wrap">
     <div class="app-sidebar">
         <div class="logo" style="">
-
-                <img src="{{ env('APP_URL') }}cloud/uploads/pfp/emptyy.jpg" alt="" style="width:50px; border-radius:100%; height:50px; margin-top:-5px" >
-
-
-            {{-- <a href="{{ route('home') }}" class="logo-icon"><span class="logo-text">Admin101</span></a> --}}
+            @if (Auth::user()->pfp_path == 'empty')
+                <img src="{{ env('APP_URL') }}cloud/uploads/pfp/emptyy.jpg" alt="" style="width:50px; border-radius:100%; height:50px; margin-top:-4px">
+            @else
+                <img src="{{ env('APP_URL') }}cloud/uploads/pfp/{{ Auth::user()->pfp_path }}" alt="">
+            @endif
             <div class="sidebar-user-switcher user-activity-online">
                 <a href="#">
                 </a>
