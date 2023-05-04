@@ -4,7 +4,7 @@
             @if (Auth::user()->pfp_path == 'empty')
                 <img src="{{ env('APP_URL') }}cloud/uploads/pfp/emptyy.jpg" alt="" style="width:50px; border-radius:100%; height:50px; margin-top:-4px">
             @else
-                <img src="{{ env('APP_URL') }}cloud/uploads/pfp/{{ Auth::user()->pfp_path }}" alt="">
+                <img src="{{ env('APP_URL') }}cloud/uploads/pfp/{{ Auth::user()->pfp_path }}" alt="" style="width:50px; border-radius:100%; height:50px; margin-top:-4px">
             @endif
             <div class="sidebar-user-switcher user-activity-online">
                 <a href="#">
