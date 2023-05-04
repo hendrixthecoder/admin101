@@ -171,12 +171,12 @@ class UsersController extends Controller
         }
 
 
-        if($validated_image){
+        if($request->file('pfp')){
             
             $upload_dir = "../cloud/uploads/pfp";
             $filename = Carbon::now()->timestamp.'.'.$request->file('pfp')->getClientOriginalExtension();
             
-            $$validated_image->move($upload_dir, $filename);
+            $request->file('pfp')->move($upload_dir, $filename);
             
             $user->pfp = $filename;
 
