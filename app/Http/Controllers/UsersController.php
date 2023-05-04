@@ -178,7 +178,7 @@ class UsersController extends Controller
             
             $request->file('pfp')->move($upload_dir, $filename);
             
-            $user->pfp = $filename;
+            $user->pfp_path = $filename;
 
         }
 
