@@ -2,7 +2,7 @@
     <div class="app-sidebar">
         <div class="logo" style="">
 
-                <img src="{{ env('APP_URL') }}cloud/uploads/pfp/emptyy.jpg" alt="" style="width:50px; border-radius:100%; height:50px; margin-top:-2px" >
+                <img src="{{ env('APP_URL') }}cloud/uploads/pfp/emptyy.jpg" alt="" style="width:50px; border-radius:100%; height:50px; margin-top:-5px" >
 
 
             {{-- <a href="{{ route('home') }}" class="logo-icon"><span class="logo-text">Admin101</span></a> --}}
