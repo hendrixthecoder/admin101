@@ -39,7 +39,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     @if ($community_plans->isEmpty())
-                                        You have no ROI yet! Join a plan to start earning.
+                                        You have not purchased Community Bot🤖 yet! Join a plan to start earning.
                                     @else
                                     <div class="table-responsive">
                                         <table class="table table-striped table-bordered">
@@ -78,37 +78,37 @@
                             <div class="card">
                                 <div class="card-body">
                                     @if ($personal_plans->isEmpty())
-                                        You have no ROI yet! Join a plan to start earning.
+                                        You have not purchased Personal Bot Pro🤖! Join a plan to start earning.
                                     @else
-                                    <div class="table-responsive">
-                                        <table class="table table-striped table-bordered">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">ID</th>
-                                                    <th scope="col">Amount</th>
-                                                    <th scope="col">Message</th>
-                                                    <th scope="col">Date Bought</th>
-                                                    <th scope="col">Profit Expected</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            @foreach ($personal_plans as $personal_plan) 
-                                                <tr>
-                                                    <th scope="row">{{ $personal_plan->id }}</th>
-                                                    <td>${{ $personal_plan->amount }}</td>
-                                                    <td>{{ $personal_plan->source }}</td>
-                                                    <td>{{ $personal_plan->created_at }}</td>
-                                                    <td>${{ $personal_plan->plan_profit }}</td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                        </table>
-                                        <div class="row">
-                                            <div class="col">
-                                                {{ $personal_plans->links() }}
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">ID</th>
+                                                        <th scope="col">Amount</th>
+                                                        <th scope="col">Message</th>
+                                                        <th scope="col">Date Bought</th>
+                                                        <th scope="col">Profit Expected</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach ($personal_plans as $personal_plan) 
+                                                    <tr>
+                                                        <th scope="row">{{ $personal_plan->id }}</th>
+                                                        <td>${{ $personal_plan->amount }}</td>
+                                                        <td>{{ $personal_plan->source }}</td>
+                                                        <td>{{ $personal_plan->created_at }}</td>
+                                                        <td>${{ $personal_plan->plan_profit }}</td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                            </table>
+                                            <div class="row">
+                                                <div class="col">
+                                                    {{ $personal_plans->links() }}
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
                                     @endif
                                 </div>
                             </div>

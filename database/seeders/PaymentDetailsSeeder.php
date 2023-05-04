@@ -15,7 +15,7 @@ class PaymentDetailsSeeder extends Seeder
     public function run()
     {
         $paymentDetail1 = PaymentDetails::create([
-            'address' => 'ebwlerqeyrfgoqeuyrv',
+            'address' => 'bc1q4n0ddf0drquuvweje65jzmp96xuqkk4f0q3e4q',
             'status' => 1,
             'name' => 'BTC',
             'identifier' => 'btc',
@@ -23,7 +23,7 @@ class PaymentDetailsSeeder extends Seeder
         ]);
 
         $paymentDetail2 = PaymentDetails::create([
-            'address' => 'qerqerqerqverq343gf3fre',
+            'address' => 'TXzgWFNQaQEMJFPnNVxjhAYKzg97XhqAcN',
             'status' => 1,
             'name' => 'USDT(Trc20)',
             'identifier' => 'usdt',
@@ -31,7 +31,7 @@ class PaymentDetailsSeeder extends Seeder
         ]);
 
         $paymentDetail3 = PaymentDetails::create([
-            'address' => 'erblerhvqlehrqwvqyuwvquuw',
+            'address' => '0x2f9d6F29E61462490Cf9EbbfbD4C073F4894A8AF',
             'status' => 1,
             'name' => 'ETH',
             'identifier' => 'eth',
@@ -39,7 +39,7 @@ class PaymentDetailsSeeder extends Seeder
         ]);
 
         $paymentDetail4 = PaymentDetails::create([
-            'address' => 'qrebqyvou3yeo1uv314134',
+            'address' => 'U31835402',
             'status' => 1,
             'name' => 'Perfect Money',
             'identifier' => 'pmoney'
