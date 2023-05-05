@@ -86,7 +86,7 @@
                                                     <tr>
                                                         <th scope="col">ID</th>
                                                         <th scope="col">Amount</th>
-                                                        <th scope="col">Message</th>
+                                                        <th scope="col">Days Left</th>
                                                         <th scope="col">Date Bought</th>
                                                         <th scope="col">Profit Expected</th>
                                                     </tr>
@@ -96,7 +96,7 @@
                                                     <tr>
                                                         <th scope="row">{{ $personal_plan->id }}</th>
                                                         <td>${{ $personal_plan->amount }}</td>
-                                                        <td>{{ $personal_plan->source }}</td>
+                                                        <td>{{ $personal_plan->days_left }}</td>
                                                         <td>{{ $personal_plan->created_at }}</td>
                                                         <td>${{ $personal_plan->plan_profit }}</td>
                                                     </tr>
