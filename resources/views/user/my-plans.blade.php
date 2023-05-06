@@ -86,7 +86,7 @@
                                                     <tr>
                                                         <th scope="col">ID</th>
                                                         <th scope="col">Amount</th>
-                                                        <th scope="col">Days Left</th>
+                                                         <th scope="col">Days Left</th>
                                                         <th scope="col">Date Bought</th>
                                                         <th scope="col">Profit Expected</th>
                                                     </tr>

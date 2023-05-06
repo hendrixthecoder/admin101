@@ -43,6 +43,7 @@ class WithdrawalController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request->all());
         $user = $request->user();
         $siteSettings = Settings::find(1);
 
@@ -59,7 +60,7 @@ class WithdrawalController extends Controller
 
                             if($request->amount >= $siteSettings->minimum_withdrawal){
                                 
-                                if($request->withdrawal_source == 'profit'){
+                                if($request->withdrawal_source == 'Profit'){
                                     $balance = $user->getDeductableProfit();
 
                                 }
