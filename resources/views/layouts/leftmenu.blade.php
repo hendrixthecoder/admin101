@@ -3,8 +3,8 @@
         <li class="sidebar-title">
             @lang('messages.welcome') {{ Auth::user()->username }}
         </li>
-        <li class="active-page">
-            <a href="{{ route('home') }}" class="active"><i class="material-icons-two-tone">dashboard</i>@lang('messages.dashboard')</a>
+        <li class="">
+            <a href="{{ route('home') }}" class=""><i class="material-icons-two-tone">dashboard</i>@lang('messages.dashboard')</a>
         </li>
         <li>
             <a href="{{ route('deposits') }}"><i class="material-icons-two-tone">credit_card</i>@lang('messages.deposits')</a>
