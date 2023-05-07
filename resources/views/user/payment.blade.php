@@ -112,44 +112,59 @@
     </div>
 </div>
 <script>
-    $(document).ready(function () {
-        $('#share-link1').click(function(){
+    $(document).ready(function () { 
+        $('#share-link1').click(() => {
             var copyText = document.getElementById('btc_address_copy');
             copyText.select();
             copyText.setSelectionRange(0,99999);
-            navigator.clipboard.writeText(copyText.value);
+            navigator.clipboard.writeText(copyText.value)
+                .then(() => {
+                    alert('Copied BTC Address: '+ copyText.value);
 
+                }).catch(() => {
+                    alert('Something went wrong try again later.')
+                })
         
-            alert('Copied BTC Address: '+ copyText.value);
-        });  
+        })
 
         $('#share-link2').click(function(){
             var copyText = document.getElementById('usdt_address');
+
             copyText.select();
             copyText.setSelectionRange(0,99999);
-            navigator.clipboard.writeText(copyText.value);
+            navigator.clipboard.writeText(copyText.value)
+                .then(() => {
+                    alert('Copied USDT Address: '+ copyText.value);
 
-        
-            alert('Copied USDT Address: '+ copyText.value);
+                }).catch(() => {
+                    alert('Something went wrong try again later.')
+                })
         });   
 
         $('#share-link3').click(function(){
             var copyText = document.getElementById('eth_address');
             copyText.select();
             copyText.setSelectionRange(0,99999);
-            navigator.clipboard.writeText(copyText.value);
+            navigator.clipboard.writeText(copyText.value)
+                .then(() => {
+                    alert('Copied ETH Address: '+ copyText.value);
 
-        
-            alert('Copied ETH Address: '+ copyText.value);
+                }).catch(() => {
+                    alert('Something went wrong try again later.')
+                })
         });   
 
         $('#share-link4').click(function(){
             var copyText = document.getElementById('p_money');
             copyText.select();
             copyText.setSelectionRange(0,99999);
-            navigator.clipboard.writeText(copyText.value);
+            navigator.clipboard.writeText(copyText.value)
+                .then(() => {
+                    alert('Copied Perfect Money Code: '+ copyText.value);
 
-            alert('Copied Perfect Money Code: '+ copyText.value);
+                }).catch(() => {
+                    alert('Something went wrong try again later.')
+                })
         });   
     });
 </script>
