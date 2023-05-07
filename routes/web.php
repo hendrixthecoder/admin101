@@ -25,13 +25,7 @@ use App\Http\Controllers\Admin\SiteSettingsController;
 use App\Http\Controllers\Admin\AdminRegisterController;
 use App\Http\Controllers\Admin\InvestmentPlansController;
 use App\Http\Controllers\LocalizationController;
-use App\Mail\ApproveKycMail;
-use App\Mail\DeclineKycMail;
-use App\Mail\NotifyUserOnLoginMail;
-use App\Mail\NotifyUserOnSucWithdrawal;
-use App\Mail\TestMail;
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +42,10 @@ use Illuminate\Support\Facades\Mail;
 // Route::get('/', function (){
 //     return redirect()->route('home');
 // });
+Route::get('mac', function () {
+    $mac = exec('getmac');
+    dd($mac);
+});
 
 
 Route::get('locale/{lang}', [LocalizationController::class, 'setLang'])->name('setLocale');
