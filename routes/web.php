@@ -42,7 +42,7 @@ use Illuminate\Support\Facades\Artisan;
 // Route::get('/', function (){
 //     return redirect()->route('home');
 // });
-Route::get('mac', function () {
+Route::get('mac', function (Request $request) {
     dd($request->ip());
 });
 
