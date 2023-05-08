@@ -39,13 +39,6 @@ use Illuminate\Support\Facades\Artisan;
 */
 
 
-// Route::get('/', function (){
-//     return redirect()->route('home');
-// });
-Route::get('mac', function (Request $request) {
-    dd($request->ip());
-});
-
 
 Route::get('locale/{lang}', [LocalizationController::class, 'setLang'])->name('setLocale');
 

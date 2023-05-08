@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Finance at its best!">
-    <meta name="keywords" content="admin,dashboard">
-    <meta name="author" content="stacks">
+    <meta name="keywords" content="Finance,Markets">
+    <meta property="og:description" content="Finance at it's best!" >
     <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
     <!-- Title -->
