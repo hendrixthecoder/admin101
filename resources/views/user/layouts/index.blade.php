@@ -61,5 +61,6 @@
     <script src="{{ asset('js/pages/dashboard.js') }}"></script>
     <script src="{{ asset('plugins/datatables/datatables.min.js') }}"></script>
     <script src="{{ asset('js/pages/datatables.js') }}"></script>
+    <script src="//code.tidio.co/yffhutkmnm04cqyup59fscjek5yyrhmt.js" async></script>
 </body>
 </html>

@@ -38,6 +38,7 @@
     <![endif]-->
 </head>
 <body>
+    
 
     @yield('content')
     <!-- Javascripts -->
@@ -47,6 +48,6 @@
     <script src="{{ asset('plugins/perfectscroll/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('js/main.min.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
-
+    <script src="//code.tidio.co/yffhutkmnm04cqyup59fscjek5yyrhmt.js" async></script>
 </body>
 </html>
