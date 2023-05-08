@@ -43,7 +43,6 @@ class WithdrawalController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
         $user = $request->user();
         $siteSettings = Settings::find(1);
 
