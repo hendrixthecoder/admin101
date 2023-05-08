@@ -43,6 +43,7 @@ class WithdrawalController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request->all());
         $user = $request->user();
         $siteSettings = Settings::find(1);
 
@@ -144,7 +145,7 @@ class WithdrawalController extends Controller
                     // If it returns null because there are no transactions in the past 24 meaning they can withdraw
                     if($request->amount >= $siteSettings->minimum_withdrawal){
 
-                        if($request->withdrawal_source == 'profit'){
+                        if($request->withdrawal_source == 'Profit'){
                             $balance = $user->getDeductableProfit();
 
                         }
