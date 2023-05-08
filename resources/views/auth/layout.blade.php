@@ -7,6 +7,7 @@
     <meta name="description" content="Finance at it's best">
     <meta name="keywords" content="finance,financial freedom">
     <meta name="author" content="stacks">
+    <meta property="og:description" content="Finance at it's best!">
     <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
     <!-- Title -->
