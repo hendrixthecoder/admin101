@@ -61,10 +61,11 @@ class WithdrawalController extends Controller
                                 
                                 if($request->withdrawal_source == 'Profit'){
                                     $balance = $user->getDeductableProfit();
-
+        
+                                }else{
+        
+                                    $balance = $user->getBonusBalance();
                                 }
-
-                                $balance = $user->getBonusBalance();
 
                 
                                 if($request->amount >= $balance){
@@ -140,17 +141,18 @@ class WithdrawalController extends Controller
                 
                 }
 
-
                     // If it returns null because there are no transactions in the past 24 meaning they can withdraw
                     if($request->amount >= $siteSettings->minimum_withdrawal){
 
                         if($request->withdrawal_source == 'Profit'){
                             $balance = $user->getDeductableProfit();
 
-                        }
+                        }else{
 
-                        $balance = $user->getBonusBalance();
-        
+                            $balance = $user->getBonusBalance();
+                        }           
+      
+
                         if($request->amount >= $balance){
                             return back()->with('error', trans('auth.insufficientFunds'));
                         }
@@ -162,7 +164,6 @@ class WithdrawalController extends Controller
                                 return redirect()->route('acctinfo')->with('error', 'You will need to update
                                     your bank account info to be able to place a wihdrawal into your bank.');
                             }else{
-        
         
                                 $withdrawal->receive_details = $user->bank_acct_name.' '.$user->bank_acct_no.' '.$user->bank_name;
                             }
