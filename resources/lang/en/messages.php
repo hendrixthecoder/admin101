@@ -30,7 +30,7 @@
         'greatDay' => 'Have a great day!',
         'depositPageMessage' => "Note funds deposited that have not been processed will not be in your 'Available Balance' until it has been confirmed.",
         'withdrawalPageMessage' => "Note funds withdrawn that have not been processed will not be removed from your 'Balance' until it has been approved.",
-        'investPageList' => 'Listed below are a list of the current investment plans.',
+        'investPageList' => 'Below is a list of the current investment plans supported.',
         'yourPackageText' => 'Your Packages',
         'noPlans' => 'You currently are not enrolled for a plan, consider joining one to begin making profits.',
         'referralLink' => 'Referral Link',

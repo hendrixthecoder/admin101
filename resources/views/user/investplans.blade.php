@@ -20,7 +20,7 @@
                 <div class="col">
                     <div class="page-description text-center">
                         <h1>@lang('messages.investmentPlans')</h1>
-                        <span>@lang('messages.investPageList')</span>
+                        <span>@lang('messages.investPageList') ROI on each plan is paid daily (24 hour period) for the duration of your plan.</span>
                     </div>
                 </div>
             </div>
