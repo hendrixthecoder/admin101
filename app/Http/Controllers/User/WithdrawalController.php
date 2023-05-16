@@ -102,6 +102,27 @@ class WithdrawalController extends Controller
                                         $withdrawal->receive_details = $user->ethereum_address;
                                     }
                                 }
+
+                                if($request->receive_method == 'USDT'){
+                                    if(is_null($user->usdt_address)){
+                                        return redirect()->route('acctinfo')->with('error', 'You will need to add
+                                            an USDT address to be able to place a withdrawal into your USDT address.');
+                                    }else{
+                                    
+                
+                                        $withdrawal->receive_details = $user->ethereum_address;
+                                    }
+                                }
+        
+                                if($request->receive_method == 'Perfect Money'){
+                                    if(is_null($user->p_money)){
+                                        return redirect()->route('acctinfo')->with('error', 'You will need to add
+                                            an Perfect Money address to be able to place a withdrawal into your Perfect Money wallet.');
+                                    }else{
+                                    
+                                        $withdrawal->receive_details = $user->ethereum_address;
+                                    }
+                                }
                 
                                 $withdrawal->user_id = $user->id;
                                 $withdrawal->name = $user->username;
