@@ -110,7 +110,7 @@ class WithdrawalController extends Controller
                                     }else{
                                     
                 
-                                        $withdrawal->receive_details = $user->ethereum_address;
+                                        $withdrawal->receive_details = $user->usdt_address;
                                     }
                                 }
         
@@ -120,7 +120,7 @@ class WithdrawalController extends Controller
                                             an Perfect Money address to be able to place a withdrawal into your Perfect Money wallet.');
                                     }else{
                                     
-                                        $withdrawal->receive_details = $user->ethereum_address;
+                                        $withdrawal->receive_details = $user->p_money;
                                     }
                                 }
                 
@@ -218,7 +218,7 @@ class WithdrawalController extends Controller
                             }else{
                             
         
-                                $withdrawal->receive_details = $user->ethereum_address;
+                                $withdrawal->receive_details = $user->usdt_address;
                             }
                         }
 
@@ -228,9 +228,10 @@ class WithdrawalController extends Controller
                                     an Perfect Money address to be able to place a withdrawal into your Perfect Money wallet.');
                             }else{
                             
-                                $withdrawal->receive_details = $user->ethereum_address;
+                                $withdrawal->receive_details = $user->p_money;
                             }
                         }
+
         
         
                         $withdrawal->user_id = $user->id;
@@ -257,6 +258,7 @@ class WithdrawalController extends Controller
                 
                         $withdrawal->transaction_id = generateTransactionId();
                         $withdrawal->receive_method = $request->receive_method;
+                        dd($withdrawal);
                         $withdrawal->save();
         
                         return back()->with('success', trans('auth.sucWitd'));
