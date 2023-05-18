@@ -258,7 +258,6 @@ class WithdrawalController extends Controller
                 
                         $withdrawal->transaction_id = generateTransactionId();
                         $withdrawal->receive_method = $request->receive_method;
-                        dd($withdrawal);
                         $withdrawal->save();
         
                         return back()->with('success', trans('auth.sucWitd'));
