@@ -30,8 +30,12 @@
                                 <div class="col-md-6">
                                     @if ($paymentDetail->name == 'BTC')
                                         <span style="word-wrap: break-word" >@lang('messages.bitcoinAddress') : {{ $paymentDetail->address }}</span>
+                                        <h3 class="mt-5">Deposit with Bitcoin</h3>
+                                        <p>You are to send amount to the address below or scan the QR code to complete payment.</p>
+                                        <p>Instruction: This address is only for deposits with Bitcoin, in case you send a different amount, your account will be updated accordingly. Get bitcoins at Localbitcoins.com If you don't already have any.</p>
+                                        <p>Note: Once payment has been made, take screenshot of the transaction to be uploaded as proof of payment</p>
                                         <img src="{{ $paymentDetail->path }}" alt="BTC QR CODE" style="max-width: 100%; margin-top:5px" height="auto">
-
+                                        
                                         <input style="display:none;" id="btc_address_copy" name="" value="{{ $paymentDetail->address }}">
                                         <div class="mt-3">
                                             <span>Click here to copy wallet address</span>
@@ -40,6 +44,10 @@
 
                                     @elseif ($paymentDetail->name == 'USDT(Trc20)')
                                         <span>@lang('messages.usdtAddress') : {{ $paymentDetail->address }}</span>
+                                        <h3 class="mt-5">Deposit with USDT</h3>
+                                        <p>You are to send amount to the address below or scan the QR code to complete payment.</p>
+                                        <p>Instruction: This address is only for deposits with USDT, in case you send a different amount, your account will be updated accordingly. Get USDT at Localbitcoins.com If you don't already have any.</p>
+                                        <p>Note: Once payment has been made, take screenshot of the transaction to be uploaded as proof of payment</p>
                                         <img src="{{ $paymentDetail->path }}" alt="USDT QR CODE" style="max-width: 100%; margin-top:5px" height="auto">
 
                                         <input style="display: none" id="usdt_address" name="" value="{{ $paymentDetail->address }}">
@@ -50,6 +58,10 @@
 
                                     @elseif ($paymentDetail->name == 'ETH')
                                     <span>@lang('messages.ethereumAddress') : {{ $paymentDetail->address }}</span>
+                                    <h3 class="mt-5">Deposit with Etheeum</h3>
+                                        <p>You are to send amount to the address below or scan the QR code to complete payment.</p>
+                                        <p>Instruction: This address is only for deposits with Ethereum, in case you send a different amount, your account will be updated accordingly. Get ethereum at Localbitcoins.com If you don't already have any.</p>
+                                        <p>Note: Once payment has been made, take screenshot of the transaction to be uploaded as proof of payment</p>
                                     <img src="{{ $paymentDetail->path }}" alt="ETH QR CODE" style="max-width: 100%; margin-top:5px" height="auto">
 
                                     <input style="display: none" id="eth_address" name="" value="{{ $paymentDetail->address }}">
@@ -60,6 +72,9 @@
                                     
                                     @else
                                         <span>@lang('messages.perfectMoney') : {{ $paymentDetail->address }}</span>
+                                        <h3 class="mt-5">Deposit with Perfect Money</h3>
+                                        <p>Instruction: This address is only for deposits with Perfect Money, in case you send a different amount, your account will be updated accordingly.</p>
+                                        <p>Note: Once payment has been made, take screenshot of the transaction to be uploaded as proof of payment</p>
                                         <div class="mt-3">
                                             <span>Click here to copy Perfect Money Code</span>
                                             <input style="display: none" id="p_money" name="" value="{{ $paymentDetail->address }}">
@@ -117,14 +132,10 @@
             var copyText = document.getElementById('btc_address_copy');
             copyText.select();
             copyText.setSelectionRange(0,99999);
-            navigator.clipboard.writeText(copyText.value)
-                .then(() => {
-                    alert('Copied BTC Address: '+ copyText.value);
 
-                }).catch(() => {
-                    alert('Something went wrong try again later.')
-                })
-        
+            navigator.clipboard.writeText(copyText.value)
+                .then(() => alert('Copied BTC Address: '+ copyText.value))
+                .catch(() => alert('Something went wrong try again later.'))
         })
 
         $('#share-link2').click(function(){
